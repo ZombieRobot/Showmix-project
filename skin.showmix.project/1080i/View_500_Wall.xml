@@ -18,42 +18,6 @@
 			<texture border="40">listpanel_back.png</texture>
 		</control>
 	</include>
-	<include name="WallPosterOverlay">
-		<control type="image">
-			<width>240</width>
-			<height>360</height>
-			<aspectratio>scale</aspectratio>
-			<texture border="1" colordiffuse="44FFFFFF">black.png</texture>
-			<bordersize>2</bordersize>
-			<include>FocusFadeOutAnimation</include>
-		</control>
-	</include>
-	<include name="WallSquareOverlay">
-		<control type="image">
-			<width>240</width>
-			<height>240</height>
-			<aspectratio>scale</aspectratio>
-			<texture border="1" colordiffuse="44FFFFFF">black.png</texture>
-			<bordersize>2</bordersize>
-			<include>FocusFadeOutAnimation</include>
-		</control>
-	</include>
-	<include name="WallPosterFocus">
-		<control type="image">
-			<width>240</width>
-			<height>360</height>
-			<texture border="10">thumbs/thumbnail_focused.png</texture>
-			<include>FocusFadeInAnimation</include>
-		</control>
-	</include>
-	<include name="WallSquareFocus">
-		<control type="image">
-			<width>240</width>
-			<height>240</height>
-			<texture border="10">thumbs/thumbnail_focused.png</texture>
-			<include>FocusFadeInAnimation</include>
-		</control>
-	</include>
 	<!-- Video Wall -->
 	<include name="VideoWall">
 		<control type="group">
@@ -76,15 +40,20 @@
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>360</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$VAR[PosterThumb]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
 						<left>140</left>
+						<top>0</top>
 						<width>100</width>
 						<height>100</height>
 						<texture>$VAR[OverlayVar]</texture>
@@ -96,90 +65,120 @@
 						<top>15</top>
 						<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
 					</control>
-					<include>WallPosterOverlay</include>
 				</itemlayout>
 				<focusedlayout height="360" width="240" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)">
-					<control type="image">
-						<width>240</width>
-						<height>360</height>
-						<aspectratio>scale</aspectratio>
-						<texture background="true">$VAR[PosterThumb]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
-					</control>
-					<control type="image">
-						<left>140</left>
-						<width>100</width>
-						<height>100</height>
-						<texture>$VAR[OverlayVar]</texture>
-						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<bordersize>1</bordersize>
-					</control>
 					<control type="group">
-						<left>15</left>
-						<top>15</top>
-						<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>240</width>
+							<height>360</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[PosterThumb]</texture>
+							<fadetime>400</fadetime>
+							<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+							<bordersize>8</bordersize>
+						</control>
+						<control type="image">
+							<left>140</left>
+							<top>0</top>
+							<width>100</width>
+							<height>100</height>
+							<texture>$VAR[OverlayVar]</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<bordersize>8</bordersize>
+						</control>
+						<control type="group">
+							<left>15</left>
+							<top>15</top>
+							<include condition="Skin.HasSetting(Disable.UnwatchedIcon)">UnwatchedIcon</include>
+						</control>
 					</control>
-					<include>WallPosterOverlay</include>
-					<include>WallPosterFocus</include>
 				</focusedlayout>
 				<itemlayout height="360" width="240" condition="Container.Content(genres)">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>360</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
-					<include>WallPosterOverlay</include>
 				</itemlayout>
 				<focusedlayout height="360" width="240" condition="Container.Content(genres)">
-					<control type="image">
-						<width>240</width>
-						<height>360</height>
-						<aspectratio>scale</aspectratio>
-						<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>240</width>
+							<height>360</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true" fallback="special://skin/extras/moviegenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/moviegenres/,.jpg]</texture>
+							<fadetime>400</fadetime>
+							<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+							<bordersize>8</bordersize>
+						</control>
 					</control>
-					<include>WallPosterOverlay</include>
-					<include>WallPosterFocus</include>
 				</focusedlayout>
 				<itemlayout height="240" width="240" condition="Container.Content(addons)">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
-					<include>WallSquareOverlay</include>
 				</itemlayout>
 				<focusedlayout height="240" width="240" condition="Container.Content(addons)">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
+						<fadetime>400</fadetime>
+						<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+						<bordersize>8</bordersize>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
 					</control>
-					<include>WallSquareOverlay</include>
-					<include>WallSquareFocus</include>
 				</focusedlayout>
 				<itemlayout height="360" width="420" condition="![Container.Content(addons) | Container.Content(genres) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>420</width>
 						<height>360</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$VAR[PosterThumb]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
 						<left>320</left>
+						<top>0</top>
 						<width>100</width>
 						<height>100</height>
 						<texture>$VAR[OverlayVar]</texture>
@@ -200,62 +199,53 @@
 						<height>40</height>
 						<align>center</align>
 						<textoffsetx>10</textoffsetx>
+						<textcolor>grey2</textcolor>
 						<info>ListItem.Label</info>
-					</control>
-					<control type="image">
-						<width>420</width>
-						<height>360</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="1" colordiffuse="44FFFFFF">black.png</texture>
-						<bordersize>2</bordersize>
 					</control>
 				</itemlayout>
 				<focusedlayout height="360" width="420" condition="![Container.Content(addons) | Container.Content(genres) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(sets)]">
-					<control type="image">
-						<width>420</width>
-						<height>360</height>
-						<aspectratio>scale</aspectratio>
-						<texture background="true">$VAR[PosterThumb]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
-					</control>
-					<control type="image">
-						<left>320</left>
-						<width>100</width>
-						<height>100</height>
-						<texture>$VAR[OverlayVar]</texture>
-						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<bordersize>1</bordersize>
-					</control>
-					<control type="image">
-						<top>310</top>
-						<width>420</width>
-						<height>50</height>
-						<texture>black.png</texture>
-						<bordersize>2</bordersize>
-						<colordiffuse>88ffffff</colordiffuse>
-					</control>
-					<control type="label">
-						<top>310</top>
-						<width>420</width>
-						<height>40</height>
-						<align>center</align>
-						<textoffsetx>10</textoffsetx>
-						<info>ListItem.Label</info>
-					</control>
-					<control type="image">
-						<width>420</width>
-						<height>360</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="1" colordiffuse="44FFFFFF">black.png</texture>
-						<bordersize>2</bordersize>
-						<include>FocusFadeOutAnimation</include>
-					</control>
-					<control type="image">
-						<width>420</width>
-						<height>360</height>
-						<texture border="10">thumbs/thumbnail_focused.png</texture>
-						<include>FocusFadeInAnimation</include>
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>420</width>
+							<height>360</height>
+							<aspectratio>scale</aspectratio>
+							<texture background="true">$VAR[PosterThumb]</texture>
+							<fadetime>400</fadetime>
+							<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+							<bordersize>8</bordersize>
+						</control>
+						<control type="image">
+							<left>320</left>
+							<top>0</top>
+							<width>100</width>
+							<height>100</height>
+							<texture>$VAR[OverlayVar]</texture>
+							<aspectratio align="center" aligny="top">keep</aspectratio>
+							<bordersize>8</bordersize>
+						</control>
+						<control type="image">
+							<left>6</left>
+							<top>310</top>
+							<width>408</width>
+							<height>44</height>
+							<texture>black.png</texture>
+							<bordersize>2</bordersize>
+							<colordiffuse>88ffffff</colordiffuse>
+						</control>
+						<control type="label">
+							<top>310</top>
+							<width>420</width>
+							<height>40</height>
+							<align>center</align>
+							<textoffsetx>10</textoffsetx>
+							<info>ListItem.Label</info>
+						</control>
 					</control>
 				</focusedlayout>
 			</control>
@@ -265,29 +255,30 @@
 				<width>14</width>
 				<height>720</height>
 				<onleft>50</onleft>
-				<onright>noop</onright>
+				<onright>SetProperty(MediaMenu,True,home)</onright>
+				<onright>SetFocus(9050)</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
 			</control>
 			<control type="group">
-				<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(files)]</visible>
+				<visible>![Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
 				<animation effect="slide" tween="cubic" time="720" start="0,806" end="0,0">VisibleChange</animation>
 				<control type="button">
 					<top>980</top>
 					<left>90</left>
 					<width>1740</width>
 					<height>90</height>
-					<font>font16_title_bold</font>
+					<font>font16_title</font>
 					<textcolor>white</textcolor>
-					<label>$INFO[ListItem.Label]</label>
-					<label2>$INFO[ListItem.Label2]</label2>
+					<label>[B]$INFO[ListItem.Label][/B]</label>
+					<label2>[B]$INFO[ListItem.Label2][/B]</label2>
 					<textoffsetx>30</textoffsetx>
-					<texturenofocus />
+					<texturenofocus>-</texturenofocus>
 					<enable>no</enable>
 					<disabledcolor>white</disabledcolor>
 				</control>
@@ -315,12 +306,16 @@
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="240" width="240" condition="!Container.Content(genres)">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="group">
 						<visible>Container.Content(artists)</visible>
@@ -333,49 +328,56 @@
 							<colordiffuse>88ffffff</colordiffuse>
 						</control>
 						<control type="label">
-							<top>190</top>
+							<top>200</top>
 							<width>240</width>
-							<height>45</height>
+							<height>30</height>
 							<align>center</align>
-							<textoffsetx>8</textoffsetx>
-							<textcolor>grey</textcolor>
+							<textoffsetx>4</textoffsetx>
+							<textcolor>grey2</textcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</control>
-					<include>WallSquareOverlay</include>
 				</itemlayout>
 				<focusedlayout height="240" width="240" condition="!Container.Content(genres)">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
+						<fadetime>400</fadetime>
+						<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+						<bordersize>8</bordersize>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
 					</control>
 					<control type="group">
 						<visible>Container.Content(artists)</visible>
+						<animation type="Focus" reversible="false">
+							<effect type="fade" start="100" end="0" time="100" tween="sine" easing="in" />
+							<effect type="slide" start="0,0" end="0,30" time="200" tween="sine" easing="in" />
+						</animation>
 						<control type="image">
 							<top>190</top>
 							<width>240</width>
 							<height>50</height>
 							<texture>black.png</texture>
-							<bordersize>2</bordersize>
+							<bordersize>8</bordersize>
 							<colordiffuse>88ffffff</colordiffuse>
 						</control>
 						<control type="label">
-							<top>190</top>
+							<top>200</top>
 							<width>240</width>
-							<height>45</height>
+							<height>30</height>
 							<align>center</align>
-							<textoffsetx>8</textoffsetx>
+							<textoffsetx>10</textoffsetx>
+							<textcolor>grey2</textcolor>
 							<info>ListItem.Label</info>
-							<animation effect="fade" end="100" start="66" time="200" tween="sine" easing="inout">Focus</animation>
-							<animation effect="fade" start="100" end="66" time="200" tween="sine" easing="inout">UnFocus</animation>
 						</control>
 					</control>
-					<include>WallSquareOverlay</include>
-					<include>WallSquareFocus</include>
 				</focusedlayout>
 				<itemlayout height="240" width="240" condition="Container.Content(genres)">
 					<control type="image">
@@ -385,10 +387,11 @@
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true" fallback="special://skin/extras/musicgenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.jpg]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
-					<include>WallSquareOverlay</include>
 				</itemlayout>
 				<focusedlayout height="240" width="240" condition="Container.Content(genres)">
 					<control type="image">
@@ -398,11 +401,14 @@
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true" fallback="special://skin/extras/musicgenres/Default.jpg">$INFO[ListItem.Label,special://skin/extras/musicgenres/,.jpg]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
+						<fadetime>400</fadetime>
+						<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+						<bordersize>8</bordersize>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
 					</control>
-					<include>WallSquareOverlay</include>
-					<include>WallSquareFocus</include>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
@@ -411,11 +417,12 @@
 				<width>8</width>
 				<height>720</height>
 				<onleft>50</onleft>
-				<onright>noop</onright>
+				<onright>SetProperty(MediaMenu,True,home)</onright>
+				<onright>SetFocus(9050)</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
@@ -441,14 +448,18 @@
 				<ondown>500</ondown>
 				<pagecontrol>60</pagecontrol>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
-				<itemlayout height="240" width="240" condition="!Container.Content(genres)">
+				<itemlayout height="240" width="240">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
+						<colordiffuse>BAffffff</colordiffuse>
 					</control>
 					<control type="image">
 						<left>140</left>
@@ -457,19 +468,25 @@
 						<height>100</height>
 						<texture>overlays/addons/enabled.png</texture>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<visible>ListItem.Property(Addon.IsInstalled)</visible>
+						<visible>StringCompare(ListItem.Label2,$LOCALIZE[449])</visible>
 						<bordersize>2</bordersize>
 					</control>
-					<include>WallSquareOverlay</include>
 				</itemlayout>
-				<focusedlayout height="240" width="240" condition="!Container.Content(genres)">
+				<focusedlayout height="240" width="240">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>240</width>
 						<height>240</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
+						<fadetime>400</fadetime>
+						<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+						<bordersize>8</bordersize>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
 					</control>
 					<control type="image">
 						<left>140</left>
@@ -478,11 +495,13 @@
 						<height>100</height>
 						<texture>overlays/addons/enabled.png</texture>
 						<aspectratio align="center" aligny="top">keep</aspectratio>
-						<visible>ListItem.Property(Addon.IsInstalled)</visible>
-						<bordersize>2</bordersize>
+						<visible>StringCompare(ListItem.Label2,$LOCALIZE[449])</visible>
+						<bordersize>8</bordersize>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
 					</control>
-					<include>WallSquareOverlay</include>
-					<include>WallSquareFocus</include>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
@@ -491,11 +510,12 @@
 				<width>8</width>
 				<height>720</height>
 				<onleft>50</onleft>
-				<onright>noop</onright>
+				<onright>SetProperty(MediaMenu,True,home)</onright>
+				<onright>SetFocus(9050)</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>
@@ -505,7 +525,7 @@
 	<!-- Picture Wall -->
 	<include name="PictureWall">
 		<control type="group">
-			<visible>Control.IsVisible(500) + !Window.IsActive(addoninformation)</visible>
+			<visible>Control.IsVisible(510) + !Window.IsActive(addoninformation)</visible>
 			<include>ViewAnimation</include>
 			<top>-85</top>
 			<control type="image">
@@ -524,7 +544,7 @@
 				<height>964</height>
 				<texture border="40">listpanel_back.png</texture>
 			</control>
-			<control type="panel" id="500">
+			<control type="panel" id="510">
 				<left>120</left>
 				<top>179</top>
 				<width>1680</width>
@@ -532,11 +552,10 @@
 				<onleft>SetProperty(MediaMenu,True,home)</onleft>
 				<onleft>SetFocus(9050)</onleft>
 				<onright>60</onright>
-				<onup>500</onup>
-				<ondown>500</ondown>
+				<onup>510</onup>
+				<ondown>510</ondown>
 				<pagecontrol>60</pagecontrol>
 				<preloaditems>2</preloaditems>
-				<visible>!Container.Content(addons)</visible>
 				<scrolltime tween="quadratic" easing="out">300</scrolltime>
 				<itemlayout height="300" width="560">
 					<control type="image">
@@ -544,6 +563,7 @@
 						<height>300</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
+						<fadetime>400</fadetime>
 						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
 						<bordersize>2</bordersize>
 					</control>
@@ -556,29 +576,21 @@
 						<colordiffuse>88ffffff</colordiffuse>
 					</control>
 					<control type="label">
-						<top>250</top>
+						<top>260</top>
 						<width>560</width>
-						<height>45</height>
+						<height>30</height>
 						<textoffsetx>15</textoffsetx>
 						<textcolor>grey2</textcolor>
 						<info>ListItem.Label</info>
 					</control>
 					<control type="label">
-						<top>250</top>
+						<top>260</top>
 						<width>560</width>
-						<height>45</height>
+						<height>30</height>
 						<align>right</align>
 						<textoffsetx>15</textoffsetx>
 						<textcolor>grey2</textcolor>
 						<info>ListItem.Label2</info>
-					</control>
-					<control type="image">
-						<width>560</width>
-						<height>300</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="1" colordiffuse="44FFFFFF">black.png</texture>
-						<bordersize>2</bordersize>
-						<include>FocusFadeOutAnimation</include>
 					</control>
 				</itemlayout>
 				<focusedlayout height="300" width="560">
@@ -587,49 +599,44 @@
 						<height>300</height>
 						<aspectratio>scale</aspectratio>
 						<texture background="true">$INFO[ListItem.Icon]</texture>
-						<bordertexture border="2">thumbs/panel_border3.png</bordertexture>
-						<bordersize>2</bordersize>
+						<fadetime>400</fadetime>
+						<bordertexture border="8">thumbs/thumbnail_focused.png</bordertexture>
+						<bordersize>8</bordersize>
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="95" end="100" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
 					</control>
-					<control type="image">
-						<top>250</top>
-						<width>560</width>
-						<height>50</height>
-						<texture>black.png</texture>
-						<bordersize>2</bordersize>
-						<colordiffuse>88ffffff</colordiffuse>
-					</control>
-					<control type="label">
-						<top>250</top>
-						<width>560</width>
-						<height>45</height>
-						<textoffsetx>15</textoffsetx>
-						<info>ListItem.Label</info>
-						<animation effect="fade" end="100" start="70" time="200" tween="sine" easing="inout">Focus</animation>
-						<animation effect="fade" start="100" end="70" time="200" tween="sine" easing="inout">UnFocus</animation>
-					</control>
-					<control type="label">
-						<top>250</top>
-						<width>560</width>
-						<height>45</height>
-						<align>right</align>
-						<textoffsetx>15</textoffsetx>
-						<info>ListItem.Label2</info>
-						<animation effect="fade" end="100" start="70" time="200" tween="sine" easing="inout">Focus</animation>
-						<animation effect="fade" start="100" end="70" time="200" tween="sine" easing="inout">UnFocus</animation>
-					</control>
-					<control type="image">
-						<width>560</width>
-						<height>300</height>
-						<aspectratio>scale</aspectratio>
-						<texture border="1" colordiffuse="44FFFFFF">black.png</texture>
-						<bordersize>2</bordersize>
-						<include>FocusFadeOutAnimation</include>
-					</control>
-					<control type="image">
-						<width>560</width>
-						<height>300</height>
-						<texture border="10">thumbs/thumbnail_focused.png</texture>
-						<include>FocusFadeInAnimation</include>
+					<control type="group">
+						<animation type="Focus" reversible="false">
+							<effect type="zoom" start="96" end="98" time="200" tween="sine" easing="inout" center="auto" />
+							<effect type="fade" start="80" end="100" time="200" tween="sine" easing="in" />
+						</animation>
+						<control type="image">
+							<top>250</top>
+							<width>560</width>
+							<height>50</height>
+							<texture>black.png</texture>
+							<bordersize>2</bordersize>
+							<colordiffuse>88ffffff</colordiffuse>
+						</control>
+						<control type="label">
+							<top>260</top>
+							<width>560</width>
+							<height>30</height>
+							<textoffsetx>15</textoffsetx>
+							<textcolor>grey2</textcolor>
+							<info>ListItem.Label</info>
+						</control>
+						<control type="label">
+							<top>260</top>
+							<width>560</width>
+							<height>30</height>
+							<align>right</align>
+							<textoffsetx>15</textoffsetx>
+							<textcolor>grey2</textcolor>
+							<info>ListItem.Label2</info>
+						</control>
 					</control>
 				</focusedlayout>
 			</control>
@@ -637,13 +644,14 @@
 				<left>1797</left>
 				<top>179</top>
 				<width>14</width>
-				<height>900</height>
+				<height>720</height>
 				<onleft>50</onleft>
-				<onright>noop</onright>
+				<onright>SetProperty(MediaMenu,True,home)</onright>
+				<onright>SetFocus(9050)</onright>
 				<ondown>60</ondown>
 				<onup>60</onup>
 				<showonepage>false</showonepage>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(60) + !Container.Scrolling">Conditional</animation>

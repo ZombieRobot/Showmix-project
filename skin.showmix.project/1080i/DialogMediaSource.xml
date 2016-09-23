@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--========================================================================-->
+<!--   ###    ########  #######  ##    ##    ##    ##  #######  ##     ##	-->
+<!--  ## ##   ##       ##     ## ###   ##    ###   ## ##     ##  ##   ##	-->
+<!--##    ##  ##       ##     ## ####  ##    ####  ## ##     ##   ## ##		-->
+<!--##     ## ######   ##     ## ## ## ##    ## ## ## ##     ##    ###		-->
+<!--######### ##       ##     ## ##  ####    ##  #### ##     ##   ## ##		-->
+<!--##     ## ##       ##     ## ##   ###    ##   ### ##     ##  ##   ##	-->
+<!--##     ## ########  #######  ##    ##    ##    ##  #######  ##     ##	-->
+<!--========================================================================-->
 <window>
 	<defaultcontrol>10</defaultcontrol>
 	<coordinates>
@@ -6,7 +15,7 @@
 		<left>211</left>
 		<top>300</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
+	<include>dialogeffect</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -95,9 +104,9 @@
 						<top>0</top>
 						<width>786</width>
 						<height>60</height>
-						<texture border="5">listselect_fo.png</texture>
+						<texture border="5">showmix/listselect_fo_settings.png</texture>
 						<visible>Control.HasFocus(10)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<left>0</left>
@@ -108,14 +117,15 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<textoffsetx>15</textoffsetx>
+						<textcolor>showmixfocus</textcolor>
 						<selectedcolor>selected</selectedcolor>
 						<info>ListItem.Label</info>
 					</control>
 				</focusedlayout>
 			</control>
 			<control type="scrollbar" id="60">
-				<left>790</left>
-				<top>2</top>
+				<left>818</left>
+				<top>132</top>
 				<width>8</width>
 				<height>180</height>
 				<texturesliderbackground>scrollbar/texturesliderbackground3.png</texturesliderbackground>
@@ -181,7 +191,7 @@
 					<description>Ok Button</description>
 					<width>310</width>
 					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
+					<focusedcolor>showmixfocus</focusedcolor>
 					<label>186</label>
 					<font>font15</font>
 				</control>
@@ -189,7 +199,7 @@
 					<description>Cancel Button</description>
 					<width>310</width>
 					<textcolor>grey2</textcolor>
-					<focusedcolor>white</focusedcolor>
+					<focusedcolor>showmixfocus</focusedcolor>
 					<label>222</label>
 					<font>font15</font>
 				</control>
@@ -216,13 +226,13 @@
 				<height>60</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<label />
+				<label>-</label>
 				<font>font14</font>
 				<onup>10</onup>
 				<onleft>12</onleft>
 				<onright>19</onright>
 				<ondown>9001</ondown>
-				<texturefocus border="5">button_fo.png</texturefocus>
+				<texturefocus border="5">showmix/listselect_fo_settings.png</texturefocus>
 				<texturenofocus border="5">dialogs/default/inner.png</texturenofocus>
 			</control>
 		</control>

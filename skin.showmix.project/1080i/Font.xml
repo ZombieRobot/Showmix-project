@@ -3,9 +3,9 @@
 	<fontset id="Default" idloc="31390">
 		<!-- Normal Fonts -->
 		<font>
-			<name>fontArial15</name>
-			<filename>Arial.ttf</filename>
-			<size>35</size>
+			<name>font9</name>
+			<filename>RobotoCondensed-Regular.ttf</filename>
+			<size>15</size>
 		</font>
 		<font>
 			<name>font10</name>
@@ -71,106 +71,60 @@
 			<filename>RobotoCondensed-Regular.ttf</filename>
 			<size>48</size>
 		</font>
-		<font>
-			<name>font48_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<style>bold</style>
-			<size>48</size>
-		</font>
-		
-		<!-- LiveTV Fonts -->
-		<font>
-			<name>font65</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>65</size>
-		</font>
-		<font>
-			<name>font24_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>24</size>
-			<style>bold</style>
-		</font>
-		<font>
-			<name>font28_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>28</size>
-			<style>bold</style>
-		</font>
-		<font>
-			<name>font52_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<style>bold</style>
-			<size>48</size>
-		</font>
-		<font>
-			<name>font11</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>24</size>
-		</font>
-		<font>
-			<name>font12b</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>28</size>
-		</font>
-		<font>
-			<name>font13b</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<size>32</size>
-		</font>
-		
 		<!-- Title Fonts -->
+		
+		<font>
+			<name>font9_title</name>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
+			<style>uppercase</style>
+			<size>22</size>
+		</font>
 		<font>
 			<name>font12_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>26</size>
 		</font>
 		<font>
 			<name>font13_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>30</size>
 		</font>
 		<font>
 			<name>font14_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>33</size>
 		</font>
 		<font>
 			<name>font15_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>35</size>
 		</font>
 		<font>
 			<name>font16_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
-			<size>38</size>
-		</font>
-		<font>
-			<name>font16_title_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<style>uppercase bold</style>
 			<size>38</size>
 		</font>
 		<font>
 			<name>font24_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>36</size>
 		</font>
 		<font>
-			<name>font30_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<name>font28_title</name>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
-			<size>45</size>
+			<size>42</size>
 		</font>
 		<font>
-			<name>font30_title_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<style>uppercase bold</style>
+			<name>font30_title</name>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
+			<style>uppercase</style>
 			<size>45</size>
 		</font>
 		<font>
@@ -181,19 +135,13 @@
 		</font>
 		<font>
 			<name>font35_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>52</size>
 		</font>
 		<font>
-			<name>font35_title_bold</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
-			<style>uppercase bold</style>
-			<size>52</size>
-		</font>
-		<font>
 			<name>font45caps_title</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>68</size>
 		</font>
@@ -209,8 +157,23 @@
 			<size>600</size>
 		</font>
 		<font>
+			<name>Font_SettingsMainLabelBig</name>
+			<filename>BebasNeue.ttf</filename>
+			<size>60</size>
+		</font>
+		<font>
+			<name>Font_ProgressLabelMid</name>
+			<filename>BebasNeue.ttf</filename>
+			<size>38</size>
+		</font>	
+		<font>
+			<name>Font_SettingsMainLabelsmall</name>
+			<filename>BebasNeue.ttf</filename>
+			<size>33</size>
+		</font>
+		<font>
 			<name>WeatherTemp</name>
-			<filename>RobotoCondensed-Regular.ttf</filename>
+			<filename>RobotoCondensed-Uppercase.ttf</filename>
 			<style>uppercase</style>
 			<size>120</size>
 		</font>
@@ -235,170 +198,87 @@
 			<filename>webhostinghub-glyphs.ttf</filename>
 			<size>20</size>
 		</font>
+		<font>
+			<name>font_settings15</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>59</size>
+		</font>
+		<font>
+			<name>font_settings11</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>29</size>
+		</font>
+		<font>
+			<name>font_settings14</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>39</size>
+		</font>
+		<font>
+			<name>font_settings10</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>24</size>
+		</font>
+		<font>
+			<name>font_settings19</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>31</size>
+		</font>
+		<font>
+			<name>font_welcome9</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>22</size>
+		</font>
+		<font>
+			<name>Font_Vitals</name>
+			<filename>BebasNeue.ttf</filename>
+			<size>36</size>
+			<linespacing>1.1</linespacing>
+		</font>
+		<font>
+			<name>font_welcome10</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>27</size>
+		</font>
+		<font>
+			<name>font_welcome11</name>
+			<filename>BebasNeue.ttf</filename>
+			<linespacing>0</linespacing>
+			<size>34</size>
+		</font>
+		<font>
+			<name>Droid16</name>
+			<filename>DroidSans.ttf</filename>
+			<size>24</size>
+		</font>	
+		<font>
+			<name>Droid9</name>
+			<filename>DroidSans.ttf</filename>
+			<size>14</size>
+		</font>	
+		<font>
+			<name>Droid19</name>
+			<filename>DroidSans.ttf</filename>
+			<size>28</size>
+		</font>	
+		<font>
+			<name>Droid22</name>
+			<filename>DroidSans.ttf</filename>
+			<size>33</size>
+			<shadow>55000000</shadow>
+		</font>
+		<font>
+			<name>DroidBold37</name>
+			<filename>DroidSans-bold.ttf</filename>
+			<size>56</size>
+			<shadow>55000000</shadow>
+		</font>	
+		
 	</fontset>
-
-    <fontset idloc="55501" id="CatboxNeue" unicode="true">
-        <font>
-            <name>fontArial15</name>
-            <filename>OpenSans.ttf</filename>
-            <size>35</size>
-        </font>
-        <font>
-            <name>font10</name>
-            <filename>OpenSans.ttf</filename>
-            <size>21</size>
-        </font>
-        <font>
-            <name>font12</name>
-            <filename>OpenSans.ttf</filename>
-            <size>26</size>
-        </font>
-        <font>
-            <name>font13</name>
-            <filename>OpenSans.ttf</filename>
-            <size>30</size>
-        </font>
-        <font>
-            <name>font14_textbox</name>
-            <filename>OpenSans.ttf</filename>
-            <size>33</size>
-        </font>
-        <font>
-            <name>font14_textbox2</name>
-            <filename>OpenSans.ttf</filename>
-            <size>33</size>
-        </font>
-        <font>
-            <name>font15_textbox</name>
-            <filename>OpenSans.ttf</filename>
-            <size>35</size>
-        </font>
-        <font>
-            <name>font14</name>
-            <filename>OpenSans.ttf</filename>
-            <size>33</size>
-        </font>
-        <font>
-            <name>font15</name>
-            <filename>OpenSans.ttf</filename>
-            <size>35</size>
-        </font>
-        <font>
-            <name>font15_bold</name>
-            <filename>OpenSans.ttf</filename>
-            <size>35</size>
-            <style>bold</style>
-        </font>
-        <font>
-            <name>font16</name>
-            <filename>OpenSans.ttf</filename>
-            <size>38</size>
-        </font>
-        <font>
-            <name>font30</name>
-            <filename>OpenSans.ttf</filename>
-            <size>45</size>
-        </font>
-        <font>
-            <name>font48</name>
-            <filename>OpenSans.ttf</filename>
-            <size>48</size>
-        </font>
-        <font>
-            <name>font12_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>26</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font13_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>30</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font14_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>33</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font15_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>35</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font16_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>38</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font24_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>36</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font30_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>45</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font48_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>48</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font35_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>52</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font45caps_title</name>
-            <filename>OpenSans.ttf</filename>
-            <size>68</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>font_MainMenu</name>
-            <filename>CatboxNeue.ttf</filename>
-            <size>100</size>
-        </font>
-        <font>
-            <name>BigAssFont</name>
-            <filename>OpenSans.ttf</filename>
-            <size>600</size>
-        </font>
-        <font>
-            <name>WeatherTemp</name>
-            <filename>OpenSans.ttf</filename>
-            <size>120</size>
-            <style>uppercase</style>
-        </font>
-        <font>
-            <name>IconTiny</name>
-            <filename>OpenSans.ttf</filename>
-            <size>26</size>
-        </font>
-        <font>
-            <name>IconSmall</name>
-            <filename>OpenSans.ttf</filename>
-            <size>30</size>
-        </font>
-        <font>
-            <name>IconMedium</name>
-            <filename>OpenSans.ttf</filename>
-            <size>36</size>
-        </font>
-        <font>
-            <name>CloseButton</name>
-            <filename>OpenSans.ttf</filename>
-            <size>20</size>
-        </font>
-    </fontset>
 </fonts>

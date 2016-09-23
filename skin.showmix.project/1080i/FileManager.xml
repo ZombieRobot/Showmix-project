@@ -7,7 +7,7 @@
 		<control type="group">
 			<left>50</left>
 			<top>80</top>
-			<include>WindowOpenCloseAnimation</include>
+			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<left>0</left>
 				<top>900</top>
@@ -38,7 +38,7 @@
 				<top>182</top>
 				<width>8</width>
 				<height>720</height>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>31</onleft>
@@ -98,7 +98,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(20)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -127,7 +127,7 @@
 		<control type="group">
 			<left>985</left>
 			<top>80</top>
-			<include>WindowOpenCloseAnimation</include>
+			<include>Window_OpenClose_Animation</include>
 			<control type="image">
 				<left>0</left>
 				<top>900</top>
@@ -159,7 +159,7 @@
 				<top>182</top>
 				<width>8</width>
 				<height>720</height>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>21</onleft>
@@ -219,7 +219,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(21)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -248,7 +248,7 @@
 		<control type="image">
 			<left>0</left>
 			<top>970</top>
-			<width>100%</width>
+			<width>1920</width>
 			<height>140</height>
 			<texture border="1">gradient_floor.png</texture>
 		</control>
@@ -267,7 +267,7 @@
 			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="480" condition="Window.Next(home)">WindowClose</animation>
 			<visible>Control.HasFocus(20)</visible>
-			<include>VisibleFadeAnimation</include>
+			<include>VisibleFadeEffect</include>
 		</control>
 		<control type="label">
 			<left>1020</left>
@@ -283,7 +283,7 @@
 			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="480" condition="Window.Next(home)">WindowClose</animation>
 			<visible>Control.HasFocus(21)</visible>
-			<include>VisibleFadeAnimation</include>
+			<include>VisibleFadeEffect</include>
 		</control>
 	</controls>
 </window>
