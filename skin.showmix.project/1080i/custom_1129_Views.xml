@@ -63,6 +63,7 @@
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font13</font>
+					<textcolor>showmixfocus</textcolor>
 					<selectedcolor>selected</selectedcolor>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -74,6 +75,11 @@
 				<item>
 					<label>$LOCALIZE[535]</label>
 					<onclick>Container.SetViewMode(50)</onclick>
+				</item>
+				<item>
+					<label>Hack Up Change Me!</label>
+					<onclick>Container.SetViewMode(599)</onclick>
+					<visible>Container.Content(addons)</visible>
 				</item>
 				<item>
 					<label>LowList</label>

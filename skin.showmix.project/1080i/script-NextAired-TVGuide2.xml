@@ -243,15 +243,6 @@
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<left>82</left>
-				<top>752</top>
-				<width>356</width>
-				<height>120</height>
-				<aspectratio>keep</aspectratio>
-				<texture>aeon-nox-logo.png</texture>
-			</control>
 			<include>SystemRightPanel</include>
 			<control type="group" id="9001">
 				<control type="scrollbar" id="60">
@@ -410,15 +401,6 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<visible>system.getbool(input.enablemouse)</visible>
-			</control>
-			<control type="image">
-				<description>LOGO</description>
-				<left>0</left>
-				<top>0</top>
-				<width>400</width>
-				<height>120</height>
-				<aspectratio>keep</aspectratio>
-				<texture>aeon-nox-logo.png</texture>
 			</control>
 			<control type="grouplist" id="9050">
 				<left>0</left>

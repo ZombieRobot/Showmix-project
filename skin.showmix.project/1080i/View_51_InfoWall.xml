@@ -305,12 +305,6 @@
 						<bordersize>2</bordersize>
 						<colordiffuse>44ffffff</colordiffuse>
 					</control>
-					<control type="image">
-						<width>300</width>
-						<height>300</height>
-						<texture>thumbs/poster_black.png</texture>
-						<bordersize>2</bordersize>
-					</control>
 					<control type="label">
 						<top>260</top>
 						<width>300</width>
@@ -343,15 +337,6 @@
 						<height>300</height>
 						<texture>thumbs/poster_black.png</texture>
 						<bordersize>2</bordersize>
-					</control>
-					<control type="label">
-						<top>260</top>
-						<width>300</width>
-						<height>30</height>
-						<align>center</align>
-						<textoffsetx>15</textoffsetx>
-						<textcolor>grey2</textcolor>
-						<info>ListItem.Label</info>
 					</control>
 					<control type="image">
 						<width>300</width>

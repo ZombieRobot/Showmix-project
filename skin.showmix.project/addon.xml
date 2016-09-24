@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<addon id="skin.showmix.project" version="5.9.2" name="showmix project" provider-name="ZombieRobot">
+<addon id="skin.showmix.project" version="4.0.0" name="showmix project" provider-name="ZombieRobot">
 	<requires>
 		<import addon="xbmc.gui" version="5.12.0"/>
 		<import addon="script.grab.fanart" version="0.12.8"/>

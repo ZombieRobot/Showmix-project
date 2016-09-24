@@ -1,20 +1,22 @@
-# Kodi Media Center language file
-# Addon Name: Aeon Nox
-# Addon id: skin.aeon.nox.5
-# Addon Provider: BigNoid
+# XBMC Media Center language file
+# Addon Name: Aeon showmix
+# Addon id: skin.aeon.showmix.4.0
+# Addon Provider: ZombieRobot
 msgid ""
 msgstr ""
 "Project-Id-Version: XBMC Skins\n"
 "Report-Msgid-Bugs-To: alanwww1@xbmc.org\n"
 "POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Kodi Translation Team\n"
+"Last-Translator: XBMC Translation Team\n"
 "Language-Team: English (http://www.transifex.com/projects/p/xbmc-skins/language/en/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#Misc labels
 
 msgctxt "#31000"
 msgid "Directed by"
@@ -24,9 +26,7 @@ msgctxt "#31001"
 msgid "Written by"
 msgstr ""
 
-msgctxt "#31002"
-msgid "Blurred album thumb"
-msgstr ""
+#empty string with id 31002
 
 msgctxt "#31003"
 msgid "Power Options"
@@ -252,9 +252,7 @@ msgctxt "#31058"
 msgid "PVR information"
 msgstr ""
 
-msgctxt "#31059"
-msgid "Install Artist Slideshow add-on to enable this feature"
-msgstr ""
+#empty string with id 31059
 
 msgctxt "#31060"
 msgid "This file is stacked, select the part you want to play from."
@@ -404,25 +402,9 @@ msgctxt "#31096"
 msgid "Concert locations"
 msgstr ""
 
-msgctxt "#31097"
-msgid "Movie playlist statistics"
-msgstr ""
-
-msgctxt "#31098"
-msgid "TV Show playlist statistics"
-msgstr ""
-
-msgctxt "#31099"
-msgid "Musicvideo playlist statistics"
-msgstr ""
-
-msgctxt "#31100"
-msgid "View:"
-msgstr ""
-
-msgctxt "#31101"
-msgid "Choose view"
-msgstr ""
+#empty strings from id 31096 to 31101
+#Skin Settings labels
+#####################################################################
 
 msgctxt "#31102"
 msgid "Background"
@@ -456,74 +438,7 @@ msgctxt "#31109"
 msgid "Unwatched episode count"
 msgstr ""
 
-msgctxt "#31110"
-msgid "Install Toolbox script to enable this feature"
-msgstr ""
-
-#: \1080i\variables.xml:612
-msgctxt "#31111"
-msgid "Similar movies"
-msgstr ""
-
-#: \1080i\variables.xml:613
-msgctxt "#31112"
-msgid "Movies directed by"
-msgstr ""
-
-#: \1080i\variables.xml:614
-msgctxt "#31113"
-msgid "Movies written by"
-msgstr ""
-
-#: \1080i\variables.xml:615
-msgctxt "#31114"
-msgid "More movies from"
-msgstr ""
-
-#: \1080i\variables.xml:616
-msgctxt "#31115"
-msgid "Similar TV shows"
-msgstr ""
-
-#: \1080i\custom_1128_WindowCustomizer.xml:65
-msgctxt "#31116"
-msgid "cycle fanart"
-msgstr ""
-
-#: \1080i\custom_1128_WindowCustomizer.xml:74
-msgctxt "#31117"
-msgid "Fallback"
-msgstr ""
-
-#: \1080i\custom_1128_WindowCustomizer.xml:84
-msgctxt "#31118"
-msgid "Download extrafanart"
-msgstr ""
-
-#: \1080i\DialogVideoInfo.xml:353
-msgctxt "#31119"
-msgid "Show the movies from this director in your library or view online information on this director on TMDb?"
-msgstr ""
-
-#: \1080i\DialogVideoInfo.xml:353
-msgctxt "#31120"
-msgid "TMDb"
-msgstr ""
-
-#: \1080i\SkinSettings.xml:321
-msgctxt "#31121"
-msgid "Disable autocomplete"
-msgstr ""
-
-#: \1080i\variables.xml:394
-msgctxt "#31122"
-msgid "Disables the autocomplete feature of the virtual keyboard"
-msgstr ""
-
-#: \1080i\variables.xml:638
-msgctxt "#31123"
-msgid "Album review"
-msgstr ""
+#empty strings from id 31110 to 31123
 
 msgctxt "#31124"
 msgid "Show Background \"Now Playing\" Video"
@@ -537,252 +452,25 @@ msgctxt "#31126"
 msgid "Enable TvTunes integration"
 msgstr ""
 
-#: \1080i\custom_1150_LiveTvSettings.xml:28
-msgctxt "#31127"
-msgid "LiveTV Mod Settings"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:74
-msgctxt "#31128"
-msgid "Channels View"
-msgstr ""
+#empty strings from id 31127 to 31128
 
 msgctxt "#31129"
 msgid "Hide Fanart in full screen visualisation"
 msgstr ""
 
-#: \1080i\custom_1150_LiveTvSettings.xml:79
-msgctxt "#31130"
-msgid "Use \"Enigma2-style\" channel OSD"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:97
-msgctxt "#31131"
-msgid "EPG Timeline View"
-msgstr ""
-
-#: \1080i\Includes_LiveTV.xml:302
-msgctxt "#31132"
-msgid "Tuner:"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:104
-msgctxt "#31133"
-msgid "Timeline channels-type:"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:111
-msgctxt "#31134"
-msgid "Timeline view-type:"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:122
-msgctxt "#31135"
-msgid "Infobar Options"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:129
-msgctxt "#31136"
-msgid "Infobar type:"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:134
-msgctxt "#31137"
-msgid "Hide encryption information"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:140
-msgctxt "#31138"
-msgid "Hide tuner information"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:146
-msgctxt "#31139"
-msgid "Hide signal information"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:158
-msgctxt "#31140"
-msgid "Sideblade Options"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:163
-msgctxt "#31141"
-msgid "Hide Guide"
-msgstr ""
+#empty strings from id 31130 to 31141
 
 msgctxt "#31142"
 msgid "Settings level"
 msgstr ""
 
-#: \1080i\custom_1150_LiveTvSettings.xml:169
-msgctxt "#31143"
-msgid "Hide Recordings"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:175
-msgctxt "#31144"
-msgid "Hide Timer"
-msgstr ""
-
-#: \1080i\custom_1150_LiveTvSettings.xml:181
-msgctxt "#31145"
-msgid "Hide Search"
-msgstr ""
-
-#: \1080i\DialogVideoInfo.xml:248
-msgctxt "#31146"
-msgid "Rated"
-msgstr ""
-
-#: \1080i\DialogVideoInfo.xml:1570
-msgctxt "#31147"
-msgid "Change rating"
-msgstr ""
-
-#: /1080i/DialogVideoInfo.xml:404
-msgctxt "#31148"
-msgid "List local library items"
-msgstr ""
-
-#: /1080i/DialogVideoInfo.xml:406
-msgctxt "#31149"
-msgid "Online information from TMDb"
-msgstr ""
-
-#: /1080i/SkinSettings.xml:310
-msgctxt "#31150"
-msgid "Select studio logo artwork"
-msgstr ""
-
-#: /1080i/variables.xml:391
-msgctxt "#31151"
-msgid "Customize the studio logos by choosing a different logo pack. Note that this has no effect on the studio icons displayed in the \"List\" view."
-msgstr ""
-
-#: /1080i/variables.xml:430
-msgctxt "#31152"
-msgid "In progress movies"
-msgstr ""
-
-#: /1080i/variables.xml:432
-msgctxt "#31153"
-msgid "Popular movies on TheMovieDB.org"
-msgstr ""
-
-#: /1080i/variables.xml:433
-msgctxt "#31154"
-msgid "Top rated movies on TheMovieDB.org"
-msgstr ""
-
-#: /1080i/variables.xml:434
-msgctxt "#31155"
-msgid "Movies currently in cinema"
-msgstr ""
-
-#: /1080i/variables.xml:435
-msgctxt "#31156"
-msgid "Upcoming movies"
-msgstr ""
-
-#: /1080i/custom_1124_WidgetCustomizer.xml:120
-msgctxt "#31157"
-msgid "Multi movie widget"
-msgstr ""
-
-#: /1080i/variables.xml:447
-msgctxt "#31158"
-msgid "IMDb Top 250 movies"
-msgstr ""
-
-#: /1080i/DialogButtonMenu.xml:226 /shortcuts/x5.DATA.xml:45
-msgctxt "#31159"
-msgid "Event log"
-msgstr ""
-
-#: /1080i/SkinSettings.xml:242
-msgctxt "#31160"
-msgid "Display background name"
-msgstr ""
-
-#: /1080i/variables.xml:395
-msgctxt "#31161"
-msgid "Display title of movie/tvshow/artist on home screen if the background has a fanart slideshow as background"
-msgstr ""
-
-#: /1080i/variables.xml
-msgctxt "#31162"
-msgid "min"
-msgstr ""
-
-#: /1080i/Includes_LiveTV.xml
-msgctxt "#31163"
-msgid "TIMESHIFT"
-msgstr ""
-
-#: /1080i/MyWeather.xml
-msgctxt "#31164"
-msgid "Change weather icons"
-msgstr ""
-
-#: /1080i/MyVideoNav.xml
-msgctxt "#31165"
-msgid "Layout"
-msgstr ""
-
-#: /1080i/variables.xml
-msgctxt "#31166"
-msgid "Wall"
-msgstr ""
-
-#: /1080i/custom_1134_PausedOverlay.xml
-msgctxt "#31167"
-msgid "You're watching"
-msgstr ""
-
-#: /1080i/custom_1134_PausedOverlay.xml
-msgctxt "#31168"
-msgid "h"
-msgstr "short for Hour(s)"
-
-#: /1080i/custom_1134_PausedOverlay.xml
-msgctxt "#31169"
-msgid "m"
-msgstr "short for Minute(s)"
-
-#: /1080i/SkinSettings.xml
-msgctxt "#31170"
-msgid "Enable Netflix style pause screen"
-msgstr ""
-
-#: /1080i/variables.xml
-msgctxt "#31171"
-msgid "Shows an overview of the movie or episode 10 seconds after the video is paused."
-msgstr ""
-
-#: /1080i/DialogPlayerProcessInfo.xml
-msgctxt "#31172"
-msgid "Inactive"
-msgstr ""
-
-#: /1080i/DialogPlayerProcessInfo.xml
-msgctxt "#31173"
-msgid "Decoder"
-msgstr ""
-
-#: /1080i/DialogPlayerProcessInfo.xml
-msgctxt "#31174"
-msgid "Hardware decoding"
-msgstr ""
-
-#: /1080i/variables.xml
-msgctxt "#31175"
-msgid "press 'OK' to see more..."
-msgstr ""
+#empty strings from id 31143 to 31204
 
 msgctxt "#31205"
 msgid "Lyrics Source"
 msgstr ""
+
+#empty strings from id 31206 to 31299
 
 msgctxt "#31300"
 msgid "Overview"
@@ -792,17 +480,25 @@ msgctxt "#31301"
 msgid "Last Updated"
 msgstr ""
 
+#empty strings from id 31302 to 31306
+
 msgctxt "#31307"
 msgid "Hide Fanart"
 msgstr ""
+
+#empty string with id 31308
 
 msgctxt "#31309"
 msgid "Memory Used:"
 msgstr ""
 
+#empty strings from id 31310 to 31316
+
 msgctxt "#31317"
 msgid "Set Fanart Path"
 msgstr ""
+
+#empty strings from id 31318 to 31319
 
 msgctxt "#31320"
 msgid "Last Logged In"
@@ -812,37 +508,65 @@ msgctxt "#31321"
 msgid "Karaoke Song Selector"
 msgstr ""
 
+#empty strings from id 31322 to 31327
+
 msgctxt "#31328"
 msgid "Recently Added"
 msgstr ""
+
+#empty strings from id 31329 to 31389
 
 msgctxt "#31390"
 msgid "Skin default"
 msgstr ""
 
+#empty strings from id 31391 to 31399
+
 msgctxt "#31400"
-msgid "[B]CONFIGURE INTERFACE SETTINGS[/B][CR][CR]Change the skin · Set language and region · Setup remote controls[CR]Set up a screensaver · Setup master lock"
+msgid "[B]CONFIGURE APPEARANCE SETTINGS[/B][CR]Change the skin · Set language and region · Change file listing options[CR]Set up a screensaver"
+msgstr ""
+
+msgctxt "#31401"
+msgid "[B]CONFIGURE VIDEO SETTINGS[/B][CR]Manage your video library · Set video playback options · Change video listing options[CR]Set subtitle fonts"
+msgstr ""
+
+msgctxt "#31402"
+msgid "[B]CONFIGURE MUSIC SETTINGS[/B][CR]Manage your music library · Set music playback options · Change music listing options[CR]Setup song submission · Set karaoke options"
+msgstr ""
+
+msgctxt "#31403"
+msgid "[B]CONFIGURE PICTURE SETTINGS[/B][CR]Set picture listing options · Configure slideshows"
+msgstr ""
+
+msgctxt "#31404"
+msgid "[B]CONFIGURE WEATHER SETTINGS[/B][CR]Set three cities to collect weather information"
 msgstr ""
 
 msgctxt "#31405"
-msgid "[B]MONITOR YOUR SYSTEM[/B][CR][CR]Check out your hardware · Monitor CPU usage[CR]Check Kodi revision number"
+msgid "[B]MONITOR YOUR SYSTEM[/B][CR]Check out your hardware · Monitor CPU usage[CR]Check Kodi revision number"
 msgstr ""
 
 msgctxt "#31406"
-msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR][CR]Setup and calibrate displays · Configure audio output · [CR]Set power saving options · Enable debugging"
+msgid "[B]CONFIGURE SYSTEM SETTINGS[/B][CR]Setup and calibrate displays · Configure audio output · Setup remote controls[CR]Set power saving options · Enable debugging · Setup master lock"
 msgstr ""
 
 msgctxt "#31407"
-msgid "[B]SETUP PROFILES[/B][CR][CR]Setup and manage user profiles · Enable login screen[CR]Change password · Add a profile picture"
+msgid "[B]SETUP PROFILES[/B][CR]Setup and manage user profiles · Enable login screen[CR]Change password · Add a profile picture"
+msgstr ""
+
+msgctxt "#31408"
+msgid "[B]CONFIGURE ADD-ONS[/B][CR]Manage your installed Add-ons · Browse for and install Add-ons from kodi.tv[CR]Modify Add-on settings"
 msgstr ""
 
 msgctxt "#31409"
-msgid "[B]CONFIGURE TV SETTINGS[/B][CR][CR]Change full screen info · Manage EPG data settings"
+msgid "[B]CONFIGURE TV SETTINGS[/B][CR]Change full screen info · Manage EPG data settings"
 msgstr ""
 
 msgctxt "#31410"
-msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR][CR]Setup control of Kodi via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
+msgid "[B]CONFIGURE SERVICE SETTINGS[/B][CR]Setup control of Kodi via UPnP and HTTP · Configure file sharing[CR]Enable Zeroconf · Configure AirPlay"
 msgstr ""
+
+#empty string with id 31411
 
 msgctxt "#31412"
 msgid "Select section"
@@ -852,17 +576,13 @@ msgctxt "#31413"
 msgid "Local subtitle available"
 msgstr ""
 
-msgctxt "#31414"
-msgid "[B]CONFIGURE PLAYER SETTINGS[/B][CR][CR]Configure video playback · Configure music playback · Configure picture slideshow[CR]Configure video language and subtitles"
-msgstr ""
-
-msgctxt "#31415"
-msgid "[B]CONFIGURE MEDIA SETTINGS[/B][CR][CR]Set default select action · Configure file list options · Configure metadata options[CR]Manage databases"
-msgstr ""
+#empty strings from id 31414 to 31420
 
 msgctxt "#31421"
-msgid "Select your Kodi user profile[CR]to login and continue"
+msgid "Select your Kodi user Profile[CR]to login and continue"
 msgstr ""
+
+#empty strings from id 31422 to 31500
 
 msgctxt "#31501"
 msgid "Channel group"
@@ -888,9 +608,14 @@ msgctxt "#31506"
 msgid "Available[CR]Groups"
 msgstr ""
 
+#empty strings from id 31507 to 31510
+
 msgctxt "#31511"
 msgid "Channel Options"
 msgstr ""
+
+#empty strings from id 31512 to 31900
+#Weather plugin
 
 msgctxt "#31901"
 msgid "36 Hour Forecast"
@@ -908,6 +633,8 @@ msgctxt "#31904"
 msgid "10 Day Forecast"
 msgstr ""
 
+#empty strings from id 31905 to 31907
+
 msgctxt "#31908"
 msgid "Chance of Precipitation"
 msgstr ""
@@ -921,7 +648,7 @@ msgid "Map & Alerts"
 msgstr ""
 
 msgctxt "#31911"
-msgid "Setup the Aeon Nox main menu"
+msgid "Setup the Aeon Showmix main menu"
 msgstr ""
 
 msgctxt "#31912"
@@ -929,11 +656,11 @@ msgid "Customize the main menu with widgets, backgrounds and statistics. Add you
 msgstr ""
 
 msgctxt "#31913"
-msgid "Aeon Nox main menu vertical position"
+msgid "Aeon showmix main menu horizontal position"
 msgstr ""
 
 msgctxt "#31914"
-msgid "Change the vertical position of the main menu. Default is centered on screen."
+msgid "Change the horizontal position of the main menu. Default is centered on screen."
 msgstr ""
 
 msgctxt "#31915"
@@ -941,7 +668,7 @@ msgid "Navigation style for horizontal lists"
 msgstr ""
 
 msgctxt "#31916"
-msgid "Change the way horizontal lists scroll in Aeon Nox. Default will scroll lists in a cycle. \"Fixed\" are lists with a beginning and end."
+msgid "Change the way horizontal lists scroll in Aeon showmix. Default will scroll lists in a cycle. \"Fixed\" are lists with a beginning and end."
 msgstr ""
 
 msgctxt "#31917"
@@ -981,7 +708,7 @@ msgid "Pick one of the preset backgrounds or set your own images as the menu ite
 msgstr ""
 
 msgctxt "#31926"
-msgid "Select add-ons, playlists or favourites. Choose 'Custom' for any of Kodi's built-in functions. (http://kodi.wiki/?title=List_of_Built_In_Functions)"
+msgid "Select add-ons, playlists or favourites. Choose 'Custom' for any of Kodi's built-in functions. (http://kodi.wiki/view/List_of_built-in_functions)"
 msgstr ""
 
 msgctxt "#31927"
@@ -989,7 +716,7 @@ msgid "Resets all above values to their defaults."
 msgstr ""
 
 msgctxt "#31928"
-msgid "Aeon Nox main menu layout"
+msgid "Aeon showmix main menu layout"
 msgstr ""
 
 msgctxt "#31929"
@@ -1005,16 +732,22 @@ msgid "Video plot preference"
 msgstr ""
 
 msgctxt "#31932"
-msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available."
+msgid "Show plot outline in the library views and full plot in the video information dialog or vice versa. Falls back to full plot if no outline is available. This setting can also be toggled by pressing \"Select\" when the plot is focused in the video information dialog."
 msgstr ""
 
 msgctxt "#31933"
 msgid "Select an item to display on the left top of the main menu"
 msgstr ""
 
+msgctxt "#31934"
+msgid "Check the TvTunes addon settings for additional options"
+msgstr ""
+
 msgctxt "#31935"
 msgid "Switch places with another menu item. Opens a dialog with a list of menu items to choose from."
 msgstr ""
+
+#empty string with id 31936
 
 msgctxt "#31937"
 msgid "Show the RSS feed on the bottom or top of the screen, depending on main menu position. Enabling this setting makes the submenu permanently visible."
@@ -1051,6 +784,16 @@ msgstr ""
 msgctxt "#31945"
 msgid "This toggles the layout of the List view. Default is a 7 item layout with extended info, \"Slim List\" is a 14 item, more basic layout"
 msgstr ""
+
+msgctxt "#31946"
+msgid "The images selected here will show in the corresponding section if no fanart is available."
+msgstr ""
+
+msgctxt "#31947"
+msgid "Setup background images"
+msgstr ""
+
+#empty strings from id 31948 to 31949
 
 msgctxt "#31950"
 msgid "WEATHER"
@@ -1097,9 +840,277 @@ msgid "CONCERTS"
 msgstr ""
 
 msgctxt "#31961"
-msgid "Hide ratings in list views"
+msgid "FINE TUNE YOUR MACHINE"
 msgstr ""
 
 msgctxt "#31962"
-msgid "This toggles the visibility of ratings in views of type List, LowList and TriPanel, except if sorted by rating."
+msgid "SETTINGS"
+msgstr ""
+
+msgctxt "#31963"
+msgid "INTERFACE AND DISPLAY"
+msgstr ""
+
+msgctxt "#31964"
+msgid "PLAYBACK AND LIBRARY"
+msgstr ""
+
+msgctxt "#31965"
+msgid "CONFIGURE TV SETTINGS"
+msgstr ""
+
+msgctxt "#31966"
+msgid "BROWSER AND SLIDESHOW"
+msgstr ""
+
+msgctxt "#31967"
+msgid "LOCATION AND APPEARANCE"
+msgstr ""
+
+msgctxt "#31968"
+msgid "NETWORK AND SERVICES"
+msgstr ""
+
+msgctxt "#31969"
+msgid "USER ACCOUNTS"
+msgstr ""
+
+msgctxt "#31970"
+msgid "CACHE AND HARDWARE"
+msgstr ""
+
+msgctxt "#31971"
+msgid "GET ADD-ONS"
+msgstr ""
+
+msgctxt "#31972"
+msgid "ASSISTANT"
+msgstr ""
+
+msgctxt "#31973"
+msgid "LIVE SHOWMIX UPDATES AND MORE"
+msgstr ""
+
+msgctxt "#31974"
+msgid "SHOWMIX HELPDESK"
+msgstr ""
+
+msgctxt "#31975"
+msgid "[B]BACK TO BASICS[/B][CR]Press select to replay the introductory Aeon tour"
+msgstr ""
+
+msgctxt "#31976"
+msgid "BACK TO BASICS"
+msgstr ""
+
+msgctxt "#31977"
+msgid "AEON WELCOME PAGE"
+msgstr ""
+
+msgctxt "#31978"
+msgid "START TOUR"
+msgstr ""
+
+msgctxt "#31979"
+msgid "NEWS"
+msgstr ""
+
+msgctxt "#31980"
+msgid "ONLINE AEON UPDATES"
+msgstr ""
+
+msgctxt "#31981"
+msgid "KODI STATISTICS"
+msgstr ""
+
+msgctxt "#31982"
+msgid "Click here for more info"
+msgstr ""
+
+msgctxt "#31983"
+msgid "CREDITS"
+msgstr ""
+
+msgctxt "#31984"
+msgid "AUTHOR AND THANKS"
+msgstr ""
+
+msgctxt "#31985"
+msgid "AEON WELCOME PAGE"
+msgstr ""
+
+msgctxt "#31986"
+msgid "KODI BUILD VERSION[CR]KODI BUILD DATE[CR]AEON VERSION[CR]SKIN BUILD DATE[CR]CURRENT THEME[CR]CURRENT THEME COLOUR[CR]LANGUAGE[CR]SYSTEM DRIVE SPACE[CR]CPU TEMPERATURE[CR]GPU TEMPERATURE[CR]SYSTEM UPTIME[CR]ONLINE STATUS[CR]IP ADDRESS"
+msgstr ""
+
+msgctxt "#31987"
+msgid "Welcome to Aeon Showmix, the new home of home entertainment.[CR]The way you enjoy your movies, television shows, music and photos is[CR]about to change. First, though, you may want to watch this short visual[CR]introduction. Interested? Press Select. If not, press Back."
+msgstr ""
+
+msgctxt "#31988"
+msgid "PRESS SELECT TO BEGIN TOUR. PRESS BACK TO SKIP"
+msgstr ""
+
+msgctxt "#31989"
+msgid "Movies and music are enjoyed in Aeon through four distinct views.[CR]Each is designed to meet specific requirements. Showcase offers maximum[CR]artwork visibilty; Panel offers more conventional thumbnail views; List[CR]speaks for itself; Wall provides maximum screen real estate for large collections."
+msgstr ""
+
+msgctxt "#31990"
+msgid "PRESS DOWN FOR NEXT SLIDE, SELECT TO SKIP"
+msgstr ""
+
+msgctxt "#31991"
+msgid "Central to Aeon is a horizontally-scrolling menu which provides instant access to[CR]its various environments. Backdrops can be assigned to each option as either[CR]a single image or slideshow. The menu can be switched between positions[CR]with a single button-press. Time and RSS can also be relocated and detached."
+msgstr ""
+
+msgctxt "#31992"
+msgid "PRESS DOWN FOR NEXT SLIDE, UP FOR PREVIOUS SLIDE, OR SELECT TO SKIP"
+msgstr ""
+
+msgctxt "#31993"
+msgid "Aeon loves artwork. Its visual philosophy revolves entirely around the[CR]tastes and content of each individual user. Like action movies? Fantasy[CR]videogames? Rousing period drama? Decorate your environment accordingly.[CR]Posters and cover art, meanwhile, are displayed in beautiful high definition."
+msgstr ""
+
+msgctxt "#31994"
+msgid "Building a library of movies, television shows or music lets Aeon exploit[CR]the full power of Kodi, providing a rich and informative browsing experience.[CR]Plot synopses and album reviews are just the tip of the iceberg thanks to[CR]info pulled from the IMDb, Allmusic, or one of many user-selected sources."
+msgstr ""
+
+msgctxt "#31995"
+msgid "Navigating between Aeon's views and windows couldn't be easier.[CR]The Global Menu can be accessed at any time from any place, providing[CR]shortcuts to Settings, Customisation, and the Aeon Assistant. A four-way[CR]"compass" menu provides instant access to any view type"
+msgstr ""
+
+msgctxt "#31996"
+msgid "Every aspect of Aeon and Kodi can be configured behind the scenes.[CR]A multi-faceted Settings environment is available from every screen,[CR]split into sections for ease of use. Its Virtual Home page provides an[CR]intuitive visual reference for all your personalisation needs."
+msgstr ""
+
+msgctxt "#31997"
+msgid "There's no limit to how many wallpapers you can splash across Aeon's[CR]backgrounds. Folders containing thousands of images can be assigned to[CR]sections like Movies and Pictures. Anything above the current screen[CR]resolution will be downscaled, anything below upscaled."
+msgstr ""
+
+msgctxt "#31998"
+msgid "Control every aspect of Kodi's media playback without missing a second.[CR]On-screen displays for video and music let you adjust everything from[CR]subtitles and aspect ratio to audiovisual sync. Permanent bookmarks[CR]can be set for easy access to your favourite scenes."
+msgstr ""
+
+msgctxt "#31999"
+msgid "Gone are the days when user customisation came at a price, and when[CR]high quality art was anything but. The Aeon Project website provides hundreds[CR]of the best wallpapers for all of Aeon's windows, free of charge and annoying[CR]adverts. Check the Aeon Assistant for live updates on new content."
+msgstr ""
+
+msgctxt "#32000"
+msgid "Toggle topbar on/off"
+msgstr ""
+
+msgctxt "#32001"
+msgid "PRESS RIGHT TO VIEW TRAILER"
+msgstr ""
+
+msgctxt "#32002"
+msgid "PRESS X TO STOP"
+msgstr ""
+
+msgctxt "#31600"
+msgid "Apply gradiant effect to home menu background"
+msgstr ""
+
+msgctxt "#31601"
+msgid "[B]WELCOME TO YOUR PERSONAL AEON ASSISTANT[/B][CR]The aeon assistant displays news updates from the aeon server, vital statistics and credits.[CR]Or take a tour of the skin and see what showmix has to offer."
+msgstr ""
+
+msgctxt "#31602"
+msgid "Disable intro video"
+msgstr ""
+
+msgctxt "#31603"
+msgid "Aeon Showmix 4.0"
+msgstr ""
+
+msgctxt "#31604"
+msgid "1st February 2015"
+msgstr ""
+
+msgctxt "#31605"
+msgid "Customize your home menu"
+msgstr ""
+
+msgctxt "#31606"
+msgid "miscellaneous skin settings"
+msgstr ""
+
+msgctxt "#31607"
+msgid "Add-on skin settings"
+msgstr ""
+
+msgctxt "#31608"
+msgid "Advanced skin options"
+msgstr ""
+
+msgctxt "#31609"
+msgid "Multiplex Classic"
+msgstr ""
+
+msgctxt "#31610"
+msgid "Multiplex Fullscreen"
+msgstr ""
+
+msgctxt "#31611"
+msgid "Fanart"
+msgstr ""
+
+msgctxt "#31612"
+msgid "Extra-fanart"
+msgstr ""
+
+msgctxt "#31613"
+msgid "Info unavailable"
+msgstr ""
+
+msgctxt "#31614"
+msgid "Run time"
+msgstr ""
+
+msgctxt "#31615"
+msgid "Genre"
+msgstr ""
+
+msgctxt "#31616"
+msgid "Rating"
+msgstr ""
+
+msgctxt "#31617"
+msgid "IMDB"
+msgstr ""
+
+msgctxt "#31618"
+msgid "PRESS DOWN TO VIEW TRAILER"
+msgstr ""
+
+msgctxt "#31619"
+msgid "Year"
+msgstr ""
+
+msgctxt "#31620"
+msgid "Kodi Subtitles"
+msgstr ""
+
+msgctxt "#31621"
+msgid "PRESS DOWN TO STOP"
+msgstr ""
+
+msgctxt "#31622"
+msgid "Customize"
+msgstr ""
+
+msgctxt "#31623"
+msgid "Extended Showmix Options"
+msgstr ""
+
+msgctxt "#31624"
+msgid "Skin Settings"
+msgstr ""
+
+msgctxt "#31625"
+msgid "[B][/B][CR]" 
+msgstr ""
+
+msgctxt "#31626"
+msgid "[B]ENHANCE YOUR SHOWMIX EXPERIENCE[/B][CR]Personalize showmix the way,look and feel you want with our custom options[CR]that change the way your skin is displayed."
 msgstr ""

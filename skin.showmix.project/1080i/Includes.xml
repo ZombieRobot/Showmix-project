@@ -22,6 +22,7 @@
 	<include file="View_500_Wall.xml" />
 	<include file="View_501_LowList.xml" />
 	<include file="View_502_Episode.xml" />
+	<include file="Viewtype_Classic_Multiplex.xml" />
 	<include file="View_503_Wall.xml" />
 	<include file="View_510_BigList.xml" />
 	<include file="variables.xml" />
@@ -46,10 +47,11 @@
 		<control type="image">
 			<left>0</left>
 			<top>0</top>
-			<width>432</width>
+			<width>412</width>
 			<height>1080</height>
-			<texture border="40">mediamenu_back.png</texture>
+			<texture border="40">showmix/menupanel_vertical.png</texture>
 		</control>
+		
 		<control type="button" id="9051">
 			<include>HiddenObject</include>
 			<onfocus condition="String.IsEmpty(Window(Home).Property(MediaMenu))">SetProperty(MediaMenu,True,home)</onfocus>
@@ -71,15 +73,6 @@
 			<texturefocus />
 			<texturenofocus />
 			<visible>system.getbool(input.enablemouse)</visible>
-		</control>
-		<control type="image">
-			<description>LOGO</description>
-			<left>0</left>
-			<top>0</top>
-			<width>400</width>
-			<height>120</height>
-			<aspectratio>keep</aspectratio>
-			<texture>aeon-nox-logo.png</texture>
 		</control>
 	</include>
 	<include name="KioskModeButton">
@@ -347,6 +340,9 @@
 			<animation effect="slide" start="0,0" end="0,-90" time="800" tween="cubic" condition="Control.IsVisible(503) + System.IdleTime(2)">Conditional</animation>
 			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480" condition="Window.Previous(home)">WindowOpen</animation>
 			<animation effect="slide" end="0,-90" start="0,0" time="480" condition="Window.Next(home)">WindowClose</animation>
+			<animation effect="slide" start="0,-90" end="0,0" delay="800" time="480">VisibleChange</animation>
+			<animation effect="slide" end="0,-90" start="0,0" time="480">VisibleChange</animation>
+			<visible>!Skin.HasSetting(topbar)</visible>
 			<control type="image">
 				<left>0</left>
 				<top>0</top>
@@ -805,5 +801,20 @@
 				<include>FocusFadeInAnimation</include>
 			</control>
 		</focusedlayout>
+	</include>
+	<include name="intro_Disable">
+		<control type="button" id="8999">
+			<onfocus>ReplaceWindow(Home)</onfocus>
+			<label>SHOULD NOT SEE ME</label>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+	</include>
+	<include name="Colour_Grey">
+		<textcolor>FF868686</textcolor>
+		<focusedcolor>FFececec</focusedcolor>
+		<disabledcolor>d0505050</disabledcolor>
+	</include>
+	<include name="Colour_OffWhite">
+		<textcolor>FFececec</textcolor>
 	</include>
 </includes>

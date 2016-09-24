@@ -146,19 +146,15 @@
 				<include condition="system.getbool(lookandfeel.enablerssfeeds)">SubMenuAnimation</include>
 				<animation effect="slide" start="1870,0" end="0,0" delay="300" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
 				<animation effect="slide" start="1870,0" end="0,0" delay="200" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
-				<control type="image" id="90101">
-					<left>50</left>
-					<width>90</width>
-					<height>87</height>
-					<texture>submenu_end.png</texture>
-				</control>
+
 				<control type="image">
-					<left>140</left>
-					<width>1780</width>
-					<height>87</height>
-					<texture>submenu_bar.png</texture>
+					<left>125</left>
+					<top>3</top>
+					<width>1668</width>
+					<height>40</height>
+					<texture>showmix/submenubar.png</texture>
 				</control>
-				<control type="fixedlist" id="9010">
+				<control type="wraplist" id="9010">
 					<left>210</left>
 					<top>0</top>
 					<width>1500</width>
@@ -176,7 +172,6 @@
 							<height>41</height>
 							<font>font13_title</font>
 							<textcolor>grey</textcolor>
-							<shadowcolor>shadow</shadowcolor>
 							<align>center</align>
 							<aligny>center</aligny>
 							<label>$INFO[ListItem.Label]</label>
@@ -186,15 +181,17 @@
 						<control type="group">
 							<visible>Control.HasFocus(9010)</visible>
 							<control type="image">
-								<width>300</width>
-								<height>41</height>
-								<texture>listselect_fo.png</texture>
+								<top>1</top>
+								<left>-18</left>
+								<width>336</width>
+								<height>42</height>
+								<texture>context_highlight.png</texture>
 							</control>
 							<control type="label">
 								<width>300</width>
 								<height>41</height>
 								<font>font13_title</font>
-								<shadowcolor>shadow</shadowcolor>
+								<textcolor>showmixfocus</textcolor>
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Label]</label>
@@ -218,31 +215,39 @@
 					<include condition="System.HasAddon(script.skinshortcuts)">CustomSubMenu</include>
 				</control>
 				<control type="button">
-					<left>130</left>
-					<top>6</top>
-					<width>30</width>
-					<height>30</height>
+					<left>175</left>
+					<top>14</top>
+					<width>15</width>
+					<height>15</height>
 					<texturefocus flipx="true" colordiffuse="white">arrowright.png</texturefocus>
 					<texturenofocus flipx="true">arrowright.png</texturenofocus>
 					<visible>Container(9010).HasPrevious</visible>
 					<onclick>Control.Move(9010,-1)</onclick>
 				</control>
 				<control type="button">
-					<left>1800</left>
-					<top>6</top>
-					<width>30</width>
-					<height>30</height>
+					<left>1730</left>
+					<top>14</top>
+					<width>15</width>
+					<height>15</height>
 					<texturefocus colordiffuse="white">arrowright.png</texturefocus>
 					<texturenofocus>arrowright.png</texturenofocus>
 					<visible>Container(9010).HasNext</visible>
 					<onclick>Control.Move(9010,1)</onclick>
 				</control>
 			</control>
+			
 			<control type="image">
-				<top>0</top>
-				<width>102%</width>
-				<height>225</height>
-				<texture>homemenu_back.png</texture>
+				<top>-15</top>
+				<width>1920</width>
+				<height>253</height>
+				<texture>showmix/homemenu_back.png</texture>
+				<visible>Skin.HasSetting(nohomegradient)</visible>
+			</control>
+			<control type="image">
+				<top>-15</top>
+				<width>1920</width>
+				<height>253</height>
+				<texture>showmix/homemenu_gradient.png</texture>
 			</control>
 			<!-- Main Menu (Includes_Home.xml) -->
 			<include condition="Skin.HasSetting(HorizontalListNav)">MainMenuListFixed</include>
@@ -258,26 +263,6 @@
 				<aligny>center</aligny>
 				<label>[UPPERCASE]$INFO[Container(9000).ListItem.Label][/UPPERCASE]</label>
 				<visible>Skin.HasSetting(mainmenuicons)</visible>
-			</control>
-			<control type="image">
-				<left>-4</left>
-				<top>58</top>
-				<width>100</width>
-				<height>104</height>
-				<texture border="1">side_fade.png</texture>
-			</control>
-			<control type="image">
-				<left>1822</left>
-				<top>58</top>
-				<width>100</width>
-				<height>104</height>
-				<texture flipx="true" border="1">side_fade.png</texture>
-			</control>
-			<control type="image">
-				<top>90</top>
-				<width>100%</width>
-				<height>72</height>
-				<texture border="1">gradient_floor.png</texture>
 			</control>
 		</control>
 		<include condition="!Skin.HasSetting(Disable.FanartTitle)">FanartTitle</include>
