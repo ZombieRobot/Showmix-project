@@ -6,7 +6,7 @@
 		<left>199</left>
 		<top>210</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
+	<include>dialogeffect</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -144,7 +144,7 @@
 			<top>148</top>
 			<width>8</width>
 			<height>480</height>
-			<texturesliderbackground />
+			<texturesliderbackground>-</texturesliderbackground>
 			<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 			<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			<onleft>9000</onleft>

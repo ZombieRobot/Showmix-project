@@ -6,22 +6,289 @@
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<allowoverlay>no</allowoverlay>
 	<views>10,11,12,13</views>
-	<menucontrol>9051</menucontrol>
 	<controls>
 		<include>CommonBackground</include>
-		
-		<include condition="String.IsEmpty(Skin.String(LiveTV.EpgViewType)) | String.IsEqual(Skin.String(LiveTV.EpgViewType),2)">EpgTimelineStandard</include>
-		<include condition="String.IsEqual(Skin.String(LiveTV.EpgViewType),1)">EpgTimelineMinified</include>
-		
+		<control type="group">
+			<description>TV Guide Timeline</description>
+			<visible>Control.IsVisible(10)</visible>
+			<include>VisibleFadeEffect</include>
+			<include>Window_OpenClose_Animation</include>
+			<top>128</top>
+			<include>SystemLeftPanel</include>
+			<include>SystemRightPanel</include>
+			<control type="epggrid" id="10">
+				<description>EPG Grid</description>
+				<left>82</left>
+				<top>32</top>
+				<width>1750</width>
+				<height>600</height>
+				<pagecontrol>10</pagecontrol>
+				<scrolltime tween="quadratic" easing="out">200</scrolltime>
+				<timeblocks>20</timeblocks>
+				<progresstexture border="0,48,18,14">PVR-EpgProgressIndicator.png</progresstexture>
+				<rulerunit>6</rulerunit>
+				<onleft>SetProperty(MediaMenu,True,home)</onleft>
+				<onleft>SetFocus(9050)</onleft>
+				<onright>SetProperty(MediaMenu,True,home)</onright>
+				<onright>SetFocus(9050)</onright>
+				<onup>10</onup>
+				<ondown>10</ondown>
+				<onback>SetProperty(MediaMenu,True,home)</onback>
+				<onback>SetFocus(9050)</onback>
+				<viewtype label="19032">list</viewtype>
+				<rulerlayout height="60" width="60">
+					<control type="image">
+						<top>0</top>
+						<width>60</width>
+						<height>60</height>
+						<texture border="1">separator2.png</texture>
+					</control>
+					<control type="label" id="2">
+						<left>0</left>
+						<top>0</top>
+						<width>60</width>
+						<height>30</height>
+						<font>font13</font>
+						<aligny>center</aligny>
+						<textcolor>labelheader</textcolor>
+						<textoffsetx>5</textoffsetx>
+						<selectedcolor>selected</selectedcolor>
+						<align>left</align>
+						<label>$INFO[ListItem.Label]</label>
+					</control>
+				</rulerlayout>
+				<channellayout height="90" width="440">
+					<control type="image">
+						<top>30</top>
+						<width>356</width>
+						<height>60</height>
+						<texture border="1">separator2.png</texture>
+					</control>
+					<control type="label">
+						<left>2</left>
+						<width>60</width>
+						<height>90</height>
+						<font>font15_title</font>
+						<align>center</align>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
+					</control>
+					<control type="label">
+						<left>60</left>
+						<width>310</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>15</textoffsetx>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<label>$INFO[ListItem.ChannelName]</label>
+					</control>
+				</channellayout>
+				<focusedchannellayout height="90" width="440">
+					<control type="image">
+						<top>30</top>
+						<width>356</width>
+						<height>60</height>
+						<texture border="1">separator2.png</texture>
+					</control>
+					<control type="image">
+						<width>356</width>
+						<height>90</height>
+						<texture border="4">listselect_fo.png</texture>
+					</control>
+					<control type="label">
+						<left>2</left>
+						<width>60</width>
+						<height>90</height>
+						<font>font15_title</font>
+						<align>center</align>
+						<selectedcolor>selected</selectedcolor>
+						<label>[B]$INFO[ListItem.ChannelNumber][/B]</label>
+					</control>
+					<control type="label" id="1">
+						<left>60</left>
+						<width>308</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>15</textoffsetx>
+						<selectedcolor>selected</selectedcolor>
+						<label>$INFO[ListItem.ChannelName]</label>
+					</control>
+				</focusedchannellayout>
+				<itemlayout height="90" width="120">
+					<control type="image" id="2">
+						<width>120</width>
+						<height>90</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3">$INFO[ListItem.Property(GenreType),overlays/pvr/genres/,.png]</texture>
+					</control>
+					<control type="group">
+						<visible>[ListItem.HasTimer | ListItem.IsRecording]</visible>
+						<control type="label">
+							<top>50</top>
+							<width>120</width>
+							<height>30</height>
+							<font>IconSmall</font>
+							<textoffsetx>15</textoffsetx>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label></label>
+							<visible>ListItem.HasTimer</visible>
+						</control>
+						<control type="label">
+							<top>50</top>
+							<width>120</width>
+							<height>30</height>
+							<font>IconSmall</font>
+							<textoffsetx>15</textoffsetx>
+							<textcolor>grey2</textcolor>
+							<selectedcolor>selected</selectedcolor>
+							<label></label>
+							<visible>ListItem.IsRecording</visible>
+						</control>
+					</control>
+					<control type="label" id="1">
+						<width>120</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>15</textoffsetx>
+						<textcolor>grey2</textcolor>
+						<selectedcolor>selected</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="slide" start="0,0" end="0,-20" time="100" tween="sine" easing="in" condition="[ListItem.HasTimer | ListItem.IsRecording]">Conditional</animation>
+					</control>
+				</itemlayout>
+				<focusedlayout height="90" width="120">
+					<control type="image">
+						<top>30</top>
+						<width>120</width>
+						<height>60</height>
+						<texture border="1">separator2.png</texture>
+					</control>
+					<control type="image" id="14">
+						<width>120</width>
+						<height>90</height>
+						<texture border="4">listselect_fo.png</texture>
+						<bordersize>2</bordersize>
+					</control>
+					<control type="image" id="2">
+						<width>120</width>
+						<height>90</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3">$INFO[ListItem.Property(GenreType),overlays/pvr/genres/,.png]</texture>
+					</control>
+					<control type="group">
+						<visible>[ListItem.HasTimer | ListItem.IsRecording]</visible>
+						<control type="label">
+							<top>50</top>
+							<width>120</width>
+							<height>30</height>
+							<font>IconSmall</font>
+							<textoffsetx>15</textoffsetx>
+							<selectedcolor>selected</selectedcolor>
+							<label></label>
+							<visible>ListItem.HasTimer</visible>
+						</control>
+						<control type="label">
+							<top>50</top>
+							<width>120</width>
+							<height>30</height>
+							<font>IconSmall</font>
+							<textoffsetx>15</textoffsetx>
+							<selectedcolor>selected</selectedcolor>
+							<label></label>
+							<visible>ListItem.IsRecording</visible>
+						</control>
+					</control>
+					<control type="label" id="1">
+						<width>120</width>
+						<height>90</height>
+						<font>font15</font>
+						<textoffsetx>15</textoffsetx>
+						<selectedcolor>selected</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<animation effect="slide" start="0,0" end="0,-20" time="100" tween="sine" easing="in" condition="[ListItem.HasTimer | ListItem.IsRecording]">Conditional</animation>
+					</control>
+				</focusedlayout>
+			</control>
+			<control type="image">
+				<left>82</left>
+				<top>632</top>
+				<width>356</width>
+				<height>240</height>
+				<aspectratio>keep</aspectratio>
+				<texture>$INFO[ListItem.Icon]</texture>
+				<bordersize>40</bordersize>
+			</control>
+			<control type="group">
+				<left>522</left>
+				<top>632</top>
+				<control type="label">
+					<left>0</left>
+					<top>15</top>
+					<width>1316</width>
+					<height>30</height>
+					<align>left</align>
+					<font>font15</font>
+					<textcolor>grey2</textcolor>
+					<textoffsetx>15</textoffsetx>
+					<label>[COLOR labelheader]$INFO[ListItem.StartTime]$INFO[ListItem.EndTime, - ,: ][/COLOR]$INFO[ListItem.Title]</label>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>58</top>
+					<width>1316</width>
+					<height>30</height>
+					<font>font15</font>
+					<textcolor>grey2</textcolor>
+					<textoffsetx>15</textoffsetx>
+					<label>$INFO[ListItem.Genre,[COLOR labelheader]$LOCALIZE[515]:[/COLOR] ,]</label>
+				</control>
+				<control type="image">
+					<description>separator image</description>
+					<left>0</left>
+					<top>45</top>
+					<width>1316</width>
+					<height>60</height>
+					<texture border="1">separator2.png</texture>
+				</control>
+				<control type="textbox" id="81">
+					<label>$INFO[ListItem.Plot]</label>
+					<left>15</left>
+					<top>124</top>
+					<width>1286</width>
+					<height>110</height>
+					<font>font15_textbox</font>
+					<pagecontrol>63</pagecontrol>
+					<include>ShowCaseInfoPanelButtonsValues</include>
+					<autoscroll time="3000" delay="4000" repeat="5000">Skin.HasSetting(Enable.AutoScroll) + !Control.HasFocus(63)</autoscroll>
+				</control>
+				<control type="scrollbar" id="63">
+					<left>1315</left>
+					<top>124</top>
+					<width>14</width>
+					<height>110</height>
+					<onup>PageUp(81)</onup>
+					<ondown>PageUp(81)</ondown>
+					<onleft>10</onleft>
+					<onright>10</onright>
+					<texturesliderbackground>-</texturesliderbackground>
+					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
+					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+				</control>
+			</control>
+		</control>
 		<control type="group">
 			<description>TV Guide Now</description>
 			<visible>Control.IsVisible(11)</visible>
-			<include>WindowOpenCloseAnimation</include>
-			<include>VisibleFadeAnimation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
 			<control type="group">
 				<left>0</left>
 				<top>128</top>
-				<include>SystemCenterPanel</include>
 				<control type="list" id="11">
 					<left>82</left>
 					<top>32</top>
@@ -128,7 +395,7 @@
 							<height>90</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(11)</visible>
-							<include>VisibleFadeAnimation</include>
+							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>440</left>
@@ -136,7 +403,7 @@
 							<height>90</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(11)</visible>
-							<include>VisibleFadeAnimation</include>
+							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="label">
 							<width>356</width>
@@ -202,7 +469,7 @@
 					<top>32</top>
 					<width>14</width>
 					<height>540</height>
-					<texturesliderbackground />
+					<texturesliderbackground>-</texturesliderbackground>
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
@@ -274,7 +541,7 @@
 						<onleft>11</onleft>
 						<onright>SetProperty(MediaMenu,True,home)</onright>
 						<onright>SetFocus(9050)</onright>
-						<texturesliderbackground />
+						<texturesliderbackground>-</texturesliderbackground>
 						<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 						<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 						<showonepage>false</showonepage>
@@ -286,12 +553,11 @@
 		<control type="group">
 			<description>TV Guide Next</description>
 			<visible>Control.IsVisible(12)</visible>
-			<include>WindowOpenCloseAnimation</include>
-			<include>VisibleFadeAnimation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
 			<control type="group">
 				<left>0</left>
 				<top>128</top>
-				<include>SystemCenterPanel</include>
 				<control type="list" id="12">
 					<left>82</left>
 					<top>32</top>
@@ -398,7 +664,7 @@
 							<height>90</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(12)</visible>
-							<include>VisibleFadeAnimation</include>
+							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="image">
 							<left>440</left>
@@ -406,7 +672,7 @@
 							<height>90</height>
 							<texture border="4">listselect_fo.png</texture>
 							<visible>Control.HasFocus(12)</visible>
-							<include>VisibleFadeAnimation</include>
+							<include>VisibleFadeEffect</include>
 						</control>
 						<control type="label">
 							<width>356</width>
@@ -472,7 +738,7 @@
 					<top>32</top>
 					<width>14</width>
 					<height>540</height>
-					<texturesliderbackground />
+					<texturesliderbackground>-</texturesliderbackground>
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
@@ -544,7 +810,7 @@
 						<onleft>12</onleft>
 						<onright>SetProperty(MediaMenu,True,home)</onright>
 						<onright>SetFocus(9050)</onright>
-						<texturesliderbackground />
+						<texturesliderbackground>-</texturesliderbackground>
 						<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 						<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 						<showonepage>false</showonepage>
@@ -556,11 +822,10 @@
 		<control type="group">
 			<description>TV Guide Channel</description>
 			<visible>Control.IsVisible(13)</visible>
-			<include>WindowOpenCloseAnimation</include>
-			<include>VisibleFadeAnimation</include>
+			<include>Window_OpenClose_Animation</include>
+			<include>VisibleFadeEffect</include>
 			<left>0</left>
 			<top>128</top>
-			<include>SystemCenterPanel</include>
 			<control type="list" id="13">
 				<left>82</left>
 				<top>32</top>
@@ -667,7 +932,7 @@
 						<height>90</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(13)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="image">
 						<left>440</left>
@@ -675,7 +940,7 @@
 						<height>90</height>
 						<texture border="4">listselect_fo.png</texture>
 						<visible>Control.HasFocus(13)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<width>356</width>
@@ -741,7 +1006,7 @@
 				<top>32</top>
 				<width>14</width>
 				<height>540</height>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<showonepage>false</showonepage>
@@ -813,22 +1078,13 @@
 					<onleft>13</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground />
+					<texturesliderbackground>-</texturesliderbackground>
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
 					<orientation>vertical</orientation>
 				</control>
 			</control>
-		</control>
-
-		<control type="label" id="29">
-			<font />
-			<include>HiddenObject</include>
-		</control>
-		<control type="label" id="30">
-			<font />
-			<include>HiddenObject</include>
 		</control>
 		<include>ScrollOffsetLabel</include>
 		<control type="image">
@@ -841,7 +1097,7 @@
 			<animation effect="fade" time="200">Hidden</animation>
 			<visible>Window.IsActive(FileBrowser) | Window.IsActive(PVRGuideInfo) | Window.IsActive(PVRRecordingInfo) | Window.IsActive(PVRTimerSetting) | Window.IsActive(PVRGroupManager) | Window.IsActive(PVRGuideSearch)</visible>
 		</control>
-		<include condition="!String.IsEqual(Skin.String(LiveTV.EpgViewType),1)">Topbar</include>
+		<include>Topbar</include>
 		<include>PVRMediaMenu</include>
 	</controls>
 </window>

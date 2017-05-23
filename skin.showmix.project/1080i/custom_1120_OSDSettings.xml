@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window id="1120" type="dialog">
 	<defaultcontrol always="true">90200</defaultcontrol>
-	<onunload condition="String.IsEqual(Skin.String(Viz.Background),4) + System.HasAddon(script.toolbox)">RunScript(script.toolbox,daemon=True,radius=30)</onunload>
 	<coordinates>
 		<system>1</system>
 		<left>199</left>
 		<top>210</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
+	<include>dialogeffect</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -60,7 +59,7 @@
 				<label>$LOCALIZE[31129]</label>
 				<onclick>Skin.ToggleSetting(HideVisualizationFanart)</onclick>
 				<selected>Skin.HasSetting(HideVisualizationFanart)</selected>
-				<enable>Visualisation.Enabled + ![String.IsEqual(Visualisation.Name,waveform) | String.IsEqual(Visualisation.Name,opengl spectrum) | String.IsEqual(Visualisation.Name,directx spectrum)]</enable>
+				<enable>Visualisation.Enabled + ![StringCompare(Visualisation.Name,waveform) | StringCompare(Visualisation.Name,opengl spectrum) | StringCompare(Visualisation.Name,directx spectrum)]</enable>
 			</control>
 			<control type="radiobutton" id="90203">
 				<description>Big Ass Label Button</description>
@@ -86,7 +85,7 @@
 			<top>88</top>
 			<width>8</width>
 			<height>540</height>
-			<texturesliderbackground />
+			<texturesliderbackground>-</texturesliderbackground>
 			<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 			<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			<onleft>90200</onleft>

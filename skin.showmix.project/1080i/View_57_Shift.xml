@@ -18,8 +18,8 @@
 			<height>450</height>
 			<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
 			<texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$VAR[PosterThumbVar]</texture>
-			<animation effect="fade" start="100" end="30" time="400">Focus</animation>
-			<animation effect="fade" start="30" end="100" time="400">UnFocus</animation>
+			<animation effect="fade" start="100" end="30" time="160">Focus</animation>
+			<animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
 		</control>
 		<control type="image">
 			<left>200</left>
@@ -54,8 +54,8 @@
 			<height>300</height>
 			<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
 			<texture background="true" flipy="true" diffuse="thumbs/thumb_diffuse.png">$INFO[ListItem.Icon]</texture>
-			<animation effect="fade" start="100" end="30" time="400">Focus</animation>
-			<animation effect="fade" start="30" end="100" time="400">UnFocus</animation>
+			<animation effect="fade" start="100" end="30" time="160">Focus</animation>
+			<animation effect="fade" start="30" end="100" time="160">UnFocus</animation>
 		</control>
 		<control type="image">
 			<left>200</left>
@@ -85,17 +85,16 @@
 				<viewtype label="31079">BigWrap</viewtype>
 				<pagecontrol>61</pagecontrol>
 				<preloaditems>2</preloaditems>
-				<scrolltime tween="quadratic">400</scrolltime>
+				<scrolltime tween="quadratic">200</scrolltime>
 				<focusposition>1</focusposition>
-				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets) | Container.Content(addons) | Container.Content(files)</visible>
+				<visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(musicvideos) | Container.Content(seasons) | Container.Content(genres) | Container.Content(sets) | Container.Content(addons)</visible>
 				<itemlayout width="315" height="750" condition="!Container.Content(addons)">
 					<include>ShiftPosterThumbs</include>
 				</itemlayout>
 				<focusedlayout width="315" height="750" condition="!Container.Content(addons)">
 					<control type="group">
-						<depth>MaxDepth</depth>
-						<animation effect="zoom" center="auto" start="100" end="130" time="400" tween="quadratic" reversible="false">Focus</animation>
-						<animation effect="zoom" center="auto" start="130" end="100" time="400" tween="quadratic" reversible="false">Unfocus</animation>
+						<animation effect="zoom" center="auto" start="100" end="130" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="auto" start="130" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
 						<include>ShiftPosterThumbs</include>
 					</control>
 				</focusedlayout>
@@ -104,8 +103,8 @@
 				</itemlayout>
 				<focusedlayout width="315" height="750" condition="Container.Content(addons)">
 					<control type="group">
-						<animation effect="zoom" center="150,450" start="100" end="130" time="400" tween="quadratic" reversible="false">Focus</animation>
-						<animation effect="zoom" center="150,450" start="130" end="100" time="400" tween="quadratic" reversible="false">Unfocus</animation>
+						<animation effect="zoom" center="150,450" start="100" end="130" time="200" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="150,450" start="130" end="100" time="200" tween="quadratic" reversible="false">Unfocus</animation>
 						<include>ShiftSquareThumbs</include>
 					</control>
 				</focusedlayout>
@@ -113,15 +112,15 @@
 			<control type="scrollbar" id="61">
 				<left>0</left>
 				<top>970</top>
-				<width>100%</width>
+				<width>1920</width>
 				<height>12</height>
 				<onup>57</onup>
 				<ondown>noop</ondown>
-				<texturesliderbackground />
+				<texturesliderbackground border="1">-</texturesliderbackground>
 				<texturesliderbar border="6,0,6,0">scrollbar/texturesliderbar_hor.png</texturesliderbar>
 				<texturesliderbarfocus border="6,0,6,0">scrollbar/texturesliderbarfocus_hor.png</texturesliderbarfocus>
-				<textureslidernib />
-				<textureslidernibfocus />
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(61) + !Container.Scrolling">Conditional</animation>
@@ -145,16 +144,29 @@
 				<orientation>horizontal</orientation>
 				<viewtype label="31079">BigWrap</viewtype>
 				<pagecontrol>61</pagecontrol>
-				<scrolltime tween="quadratic">400</scrolltime>
+				<scrolltime tween="quadratic">200</scrolltime>
 				<focusposition>1</focusposition>
 				<visible>Container.Content(addons) | Container.Content(songs) | Container.Content(artists) | Container.Content(albums) | Container.Content(genres)</visible>
 				<itemlayout width="315" height="750">
 					<include>ShiftSquareThumbs</include>
 				</itemlayout>
 				<focusedlayout width="315" height="750">
+					<control type="image">
+						<left>-35</left>
+						<top>340</top>
+						<width>390</width>
+						<height>400</height>
+						<aspectratio>keep</aspectratio>
+						<texture background="true">$INFO[ListItem.Art(discart)]</texture>
+						<animation effect="slide" delay="1600" end="0,-260" time="320" tween="quadratic">Focus</animation>
+						<animation effect="slide" start="0,-260" end="0" time="200" tween="quadratic" easing="in">Unfocus</animation>
+						<animation effect="zoom" start="100" end="70" center="auto" time="200" condition="!Control.HasFocus(57)">Conditional</animation>
+						<visible>!IsEmpty(ListItem.Art(discart))</visible>
+						<bordersize>7</bordersize>
+					</control>
 					<control type="group">
-						<animation effect="zoom" center="150,450" start="100" end="130" time="400" tween="quadratic" reversible="false">Focus</animation>
-						<animation effect="zoom" center="150,450" start="130" end="100" time="400" tween="quadratic" reversible="false">Unfocus</animation>
+						<animation effect="zoom" center="150,450" start="100" end="130" time="160" tween="quadratic" reversible="false">Focus</animation>
+						<animation effect="zoom" center="150,450" start="130" end="100" time="160" tween="quadratic" reversible="false">Unfocus</animation>
 						<include>ShiftSquareThumbs</include>
 					</control>
 				</focusedlayout>
@@ -162,15 +174,15 @@
 			<control type="scrollbar" id="61">
 				<left>0</left>
 				<top>970</top>
-				<width>100%</width>
+				<width>1920</width>
 				<height>12</height>
 				<onup>57</onup>
 				<ondown>noop</ondown>
-				<texturesliderbackground />
+				<texturesliderbackground border="1">-</texturesliderbackground>
 				<texturesliderbar border="6,0,6,0">scrollbar/texturesliderbar_hor.png</texturesliderbar>
 				<texturesliderbarfocus border="6,0,6,0">scrollbar/texturesliderbarfocus_hor.png</texturesliderbarfocus>
-				<textureslidernib />
-				<textureslidernibfocus />
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
 				<showonepage>false</showonepage>
 				<orientation>horizontal</orientation>
 				<animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.HasFocus(61) + !Container.Scrolling">Conditional</animation>

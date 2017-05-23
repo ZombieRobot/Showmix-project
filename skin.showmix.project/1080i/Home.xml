@@ -2,19 +2,17 @@
 <window>
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>ClearProperty(HomeWidget,Home)</onload>
-	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|x11|x12|x13|x101|x202|x303|x404|x505|x606)</onload>
+	<onload>SetProperty(Window.HasSettings,True,home)</onload>
+	<onload>RunScript(script.skinshortcuts,type=buildxml&amp;mainmenuID=9000&amp;group=x1|x2|x3|x4|x5|x6|x7|x8|x9|x10|x11|x12|x13|x101|x202|x303|x404|x50​5|x606)</onload>
+	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<controls>
 		<include>CommonBackground</include>
 		<include condition="!Skin.HasSetting(Disable.Videoinfo)">NowPlayingVideoWidget</include>
 		<include condition="!Skin.HasSetting(Disable.Musicinfo)">NowPlayingMusicWidget</include>
 		<include>HomeRecentlyAddedInfo</include>
-		<include condition="!Skin.HasSetting(Disable.Altwidget) + System.HasAddon(script.extendedinfo)">HomeRecentlyAddedInfoAlt</include>
 		<include>WeatherWidget</include>
-		<include>LiveTVWidget</include>
 		<control type="group">
-			<top>424</top>
-			<depth>MaxDepth</depth>
+			<top>420</top>
 			<control type="group">
 				<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
 				<animation effect="slide" end="-1870,0" time="240">WindowClose</animation>
@@ -22,17 +20,18 @@
 				<animation effect="slide" start="-1870" end="0" time="240">VisibleChange</animation>
 				<animation effect="slide" start="-1870,0" end="0,0" delay="800" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
 				<control type="image">
+					<top>5</top>
 					<width>1780</width>
-					<height>87</height>
+					<height>84</height>
 					<texture flipy="true">submenu_bar.png</texture>
 				</control>
 				<control type="image">
+					<top>5</top>
 					<left>1780</left>
-					<width>90</width>
-					<height>87</height>
+					<width>84</width>
+					<height>84</height>
 					<texture flipx="true" flipy="true">submenu_end.png</texture>
 				</control>
-				<include condition="System.HasAddon(service.library.data.provider)">PlayListStatsList</include>
 				<control type="label">
 					<left>0</left>
 					<top>46</top>
@@ -46,21 +45,39 @@
 				</control>
 				<control type="grouplist" id="9020">
 					<left>0</left>
-					<top>46</top>
-					<width>1780</width>
+					<top>49</top>
+					<width>1790</width>
 					<height>41</height>
 					<align>right</align>
 					<orientation>horizontal</orientation>
-					<onup condition="Control.IsVisible(9004)">9004</onup>
 					<onup condition="Control.IsVisible(9003)">9003</onup>
-					<onup condition="![Control.IsVisible(9003) | Control.IsVisible(9004)]">9000</onup>
+					<onup condition="!Control.IsVisible(9003)">9000</onup>
 					<ondown>9000</ondown>
-					<include condition="System.HasAddon(script.globalsearch)">HomeSearchButton</include>
+					<control type="button" id="9027">
+						<label></label>
+						<textoffsetx>0</textoffsetx>
+						<width>45</width>
+						<height>35</height>
+						<align>center</align>
+						<font>IconTiny</font>
+						<textcolor>grey</textcolor>
+						<focusedcolor>a9000000</focusedcolor>
+						<visible>System.HasAddon(script.globalsearch)</visible>
+						<onclick>RunAddon(script.globalsearch)</onclick>
+						<animation type="Visible">
+							<effect type="fade" start="0" end="100" tween="sine" easing="inout" time="300" />
+							<effect type="zoom" start="50" end="100" center="auto" tween="sine" easing="inout" time="300" />
+						</animation>
+						<animation type="Hidden">
+							<effect type="fade" start="100" end="0" tween="sine" easing="inout" time="300" />
+							<effect type="zoom" start="100" end="50" center="auto" tween="sine" easing="inout" time="300" />
+						</animation>
+					</control>
 					<control type="button" id="9021">
 						<label></label>
 						<textoffsetx>0</textoffsetx>
-						<width>50</width>
-						<height>41</height>
+						<width>45</width>
+						<height>38</height>
 						<align>center</align>
 						<font>IconTiny</font>
 						<textcolor>grey</textcolor>
@@ -79,8 +96,8 @@
 					<control type="button" id="9022">
 						<label></label>
 						<textoffsetx>0</textoffsetx>
-						<width>50</width>
-						<height>41</height>
+						<width>45</width>
+						<height>38</height>
 						<align>center</align>
 						<font>IconTiny</font>
 						<textcolor>grey</textcolor>
@@ -98,23 +115,23 @@
 					</control>
 					<control type="label" id="9026">
 						<width>5</width>
-						<height>41</height>
-						<label />
+						<height>33</height>
+						<label>-</label>
 						<font>font13_title</font>
 						<textcolor>themecolor</textcolor>
 					</control>
 					<control type="label" id="9023">
 						<width>auto</width>
-						<height>41</height>
+						<height>33</height>
 						<label>$INFO[Weather.Temperature,,[COLOR grey]  |  [/COLOR]]</label>
 						<font>font13_title</font>
 						<textcolor>themecolor</textcolor>
-						<visible>Weather.IsFetched + !String.IsEmpty(Weather.Plugin)</visible>
+						<visible>Weather.IsFetched + !IsEmpty(Weather.Plugin)</visible>
 						<shadowcolor>shadow</shadowcolor>
 					</control>
 					<control type="label" id="9025">
 						<width>auto</width>
-						<height>41</height>
+						<height>33</height>
 						<label>$INFO[System.Date,[COLOR grey],  |  [/COLOR]]$INFO[System.Time]</label>
 						<font>font13_title</font>
 						<textcolor>themecolor</textcolor>
@@ -123,30 +140,28 @@
 				</control>
 			</control>
 		</control>
-		<include condition="system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Detach.RSS)">RSSFeedWidget</include>
-		<include condition="system.getbool(lookandfeel.enablerssfeeds) + !Skin.HasSetting(Detach.RSS)">RSSFeedWidget2</include>
+		<include condition="system.getbool(lookandfeel.enablerssfeeds) + !Skin.HasSetting(Detach.RSS)">RSSFeedWidget</include>
+		<include condition="system.getbool(lookandfeel.enablerssfeeds) + Skin.HasSetting(Detach.RSS)">RSSFeedWidget2</include>
 		<control type="group">
 			<top>453</top>
-			<depth>MaxDepth</depth>
 			<animation effect="slide" end="0,338" time="320" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-			<animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
-				<effect type="zoom" start="0" end="100" center="960,540" delay="500" time="300" tween="cubic" />
-			</animation>
-			<animation type="WindowOpen" reversible="false" condition="!Window.Previous(Startup)">
-				<effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" />
-				<effect type="fade" start="50" end="100" time="300" />
+			<animation type="WindowOpen" reversible="false">
+				<effect type="zoom" start="80" end="100" center="960,540" easing="out" tween="back" time="300" />
+				<effect type="fade" start="0" end="100" time="300" />
 			</animation>
 			<animation type="WindowClose" reversible="false">
+				<effect type="zoom" start="100" end="80" center="960,540" easing="in" tween="back" time="300" />
 				<effect type="fade" start="100" end="0" time="300" />
-				<effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
 			</animation>
 			<control type="group" id="9001">
 				<left>0</left>
 				<top>159</top>
+				<onup>9000</onup>
+				<ondown>9002</ondown>
 				<include condition="system.getbool(lookandfeel.enablerssfeeds)">SubMenuAnimation</include>
-				<animation effect="slide" start="1870,0" end="0,0" delay="300" time="240" condition="!Window.Previous(startup)">WindowOpen</animation>
-				<animation effect="slide" start="1870,0" end="0,0" delay="200" time="480" condition="Window.Previous(startup)">WindowOpen</animation>
-
+				<animation effect="slide" start="1870,0" end="0,0" delay="300" time="240" condition="!window.previous(startup)">WindowOpen</animation>
+				<animation effect="slide" start="1870,0" end="0,0" delay="800" time="480" condition="window.previous(startup)">WindowOpen</animation>
+				
 				<control type="image">
 					<left>125</left>
 					<top>3</top>
@@ -159,9 +174,10 @@
 					<top>0</top>
 					<width>1500</width>
 					<height>87</height>
+					<align>center</align>
 					<onup>9000</onup>
 					<ondown>9004</ondown>
-					<pagecontrol />
+					<pagecontrol>-</pagecontrol>
 					<scrolltime tween="quadratic" easing="out">300</scrolltime>
 					<focusposition>2</focusposition>
 					<movement>2</movement>
@@ -183,7 +199,7 @@
 							<control type="image">
 								<top>1</top>
 								<left>-18</left>
-								<width>336</width>
+								<width>338</width>
 								<height>42</height>
 								<texture>context_highlight.png</texture>
 							</control>
@@ -204,7 +220,6 @@
 								<height>41</height>
 								<font>font13_title</font>
 								<textcolor>grey</textcolor>
-								<shadowcolor>shadow</shadowcolor>
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>$INFO[ListItem.Label]</label>
@@ -215,27 +230,26 @@
 					<include condition="System.HasAddon(script.skinshortcuts)">CustomSubMenu</include>
 				</control>
 				<control type="button">
-					<left>175</left>
-					<top>14</top>
-					<width>15</width>
-					<height>15</height>
+					<left>165</left>
+					<top>6</top>
+					<width>30</width>
+					<height>30</height>
 					<texturefocus flipx="true" colordiffuse="white">arrowright.png</texturefocus>
 					<texturenofocus flipx="true">arrowright.png</texturenofocus>
 					<visible>Container(9010).HasPrevious</visible>
 					<onclick>Control.Move(9010,-1)</onclick>
 				</control>
 				<control type="button">
-					<left>1730</left>
-					<top>14</top>
-					<width>15</width>
-					<height>15</height>
+					<left>1725</left>
+					<top>6</top>
+					<width>30</width>
+					<height>30</height>
 					<texturefocus colordiffuse="white">arrowright.png</texturefocus>
 					<texturenofocus>arrowright.png</texturenofocus>
 					<visible>Container(9010).HasNext</visible>
 					<onclick>Control.Move(9010,1)</onclick>
 				</control>
 			</control>
-			
 			<control type="image">
 				<top>-15</top>
 				<width>1920</width>
@@ -255,7 +269,7 @@
 			<control type="label">
 				<left>0</left>
 				<top>17</top>
-				<width>100%</width>
+				<width>1920</width>
 				<height>41</height>
 				<font>font13_title</font>
 				<textcolor>grey</textcolor>
@@ -265,6 +279,5 @@
 				<visible>Skin.HasSetting(mainmenuicons)</visible>
 			</control>
 		</control>
-		<include condition="!Skin.HasSetting(Disable.FanartTitle)">FanartTitle</include>
 	</controls>
 </window>

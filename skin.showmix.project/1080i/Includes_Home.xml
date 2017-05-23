@@ -9,11 +9,12 @@
 		<onleft>9000</onleft>
 		<onright>9000</onright>
 		<movement>1</movement>
-		<onup condition="Control.IsVisible(9004) + ![System.HasMediaDVD | System.HasAddon(script.globalsearch)]">9004</onup>
 		<onup condition="Control.IsVisible(9003) + ![System.HasMediaDVD | System.HasAddon(script.globalsearch)]">9003</onup>
 		<onup condition="System.HasMediaDVD | System.HasAddon(script.globalsearch)">9020</onup>
+		<!--<onup condition="Control.IsVisible(9003) + !System.HasMediaDVD">9003</onup>
+		<onup condition="System.HasMediaDVD">9020</onup>-->
 		<ondown>9001</ondown>
-		<pagecontrol />
+		<pagecontrol>-</pagecontrol>
 		<scrolltime tween="quadratic" easing="out">300</scrolltime>
 		<include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
 		<include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
@@ -36,7 +37,7 @@
 				<width>500</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
-				<textcolor>grey3</textcolor>
+				<textcolor>48FFFFFF</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -50,7 +51,7 @@
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>Control.HasFocus(9000)</visible>
-				<include>VisibleFadeAnimation</include>
+				<include>VisibleFadeEffect</include>
 			</control>
 		</focusedlayout>
 		<itemlayout height="100" width="640" condition="Skin.HasSetting(biggergap)">
@@ -58,7 +59,7 @@
 				<width>640</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
-				<textcolor>grey3</textcolor>
+				<textcolor>48FFFFFF</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -69,7 +70,7 @@
 				<width>640</width>
 				<height>90</height>
 				<font>font_MainMenu</font>
-				<textcolor>grey3</textcolor>
+				<textcolor>48FFFFFF</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -83,7 +84,7 @@
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
 				<visible>Control.HasFocus(9000)</visible>
-				<include>VisibleFadeAnimation</include>
+				<include>VisibleFadeEffect</include>
 			</control>
 		</focusedlayout>
 		<itemlayout height="100" width="250" condition="Skin.HasSetting(mainmenuicons)">
@@ -127,6 +128,7 @@
 	<include name="PicturesMainMenu">
 		<item id="4">
 			<label fallback="31951">$INFO[Skin.String(PicturesHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultPicture.png">$INFO[Skin.String(PicturesHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</thumb>
@@ -144,6 +146,7 @@
 	<include name="MusicMainMenu">
 		<item id="3">
 			<label fallback="31956">$INFO[Skin.String(MusicHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultAddonMusic.png">$INFO[Skin.String(MusicHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(MusicHomeItem.MultiFanart)]</thumb>
@@ -161,10 +164,11 @@
 	<include name="MoviesMainMenu">
 		<item id="10">
 			<label fallback="31954">$INFO[Skin.String(MovieHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultMovies.png">$INFO[Skin.String(MovieHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(MovieHomeItem.MultiFanart)]</thumb>
-			<property name="Path" fallback="ActivateWindow(Videos,videodb://movies/titles/,return)">$INFO[Skin.String(MovieHomeItem.Path)]</property>
+			<property name="Path" fallback="ActivateWindow(Videos,MovieTitles,return)">$INFO[Skin.String(MovieHomeItem.Path)]</property>
 			<property name="Item">Movie</property>
 			<property name="BGType">$INFO[Skin.String(MovieHomeItem.BGType)]</property>
 			<property name="Widget">$INFO[Skin.String(MovieHomeItem.Widget)]</property>
@@ -178,10 +182,11 @@
 	<include name="TVShowsMainMenu">
 		<item id="11">
 			<label fallback="31955">$INFO[Skin.String(TVShowHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultTVShows.png">$INFO[Skin.String(TVShowHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(TVShowHomeItem.MultiFanart)]</thumb>
-			<property name="Path" fallback="ActivateWindow(Videos,videodb://tvshows/titles/,return)">$INFO[Skin.String(TVShowHomeItem.Path)]</property>
+			<property name="Path" fallback="ActivateWindow(Videos,TVShowTitles,return)">$INFO[Skin.String(TVShowHomeItem.Path)]</property>
 			<property name="Item">TVShow</property>
 			<property name="BGType">$INFO[Skin.String(TVShowHomeItem.BGType)]</property>
 			<property name="Widget">$INFO[Skin.String(TVShowHomeItem.Widget)]</property>
@@ -195,6 +200,7 @@
 	<include name="TVMainMenu">
 		<item id="12">
 			<label fallback="31952">$INFO[Skin.String(LiveTVHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultAddonPVRClient.png">$INFO[Skin.String(LiveTVHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(LiveTVHomeItem.MultiFanart)]</thumb>
@@ -212,6 +218,7 @@
 	<include name="VideosMainMenu">
 		<item id="2">
 			<label fallback="31953">$INFO[Skin.String(VideosHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultVideo.png">$INFO[Skin.String(VideosHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(VideosHomeItem.MultiFanart)]</thumb>
@@ -229,10 +236,11 @@
 	<include name="ProgramsMainMenu">
 		<item id="1">
 			<label fallback="31957">$INFO[Skin.String(ProgramsHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultProgram.png">$INFO[Skin.String(ProgramsHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(ProgramsHomeItem.MultiFanart)]</thumb>
-			<property name="Path" fallback="ActivateWindow(1133)">$INFO[Skin.String(ProgramsHomeItem.Path)]</property>
+			<property name="Path" fallback="ActivateWindow(Programs,Addons,return)">$INFO[Skin.String(ProgramsHomeItem.Path)]</property>
 			<property name="Item">Programs</property>
 			<property name="BGType">$INFO[Skin.String(ProgramsHomeItem.BGType)]</property>
 			<property name="Widget">$INFO[Skin.String(ProgramsHomeItem.Widget)]</property>
@@ -246,6 +254,7 @@
 	<include name="SettingsMainMenu">
 		<item id="5">
 			<label fallback="31959">$INFO[Skin.String(SettingsHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultAddonService.png">$INFO[Skin.String(SettingsHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(SettingsHomeItem.MultiFanart)]</thumb>
@@ -263,6 +272,7 @@
 	<include name="ShutdownMainMenu">
 		<item id="6">
 			<label fallback="33060">$INFO[Skin.String(ShutdownHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/power.png">$INFO[Skin.String(ShutdownHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(ShutdownHomeItem.MultiFanart)]</thumb>
@@ -280,6 +290,7 @@
 	<include name="FavoritesMainMenu">
 		<item id="8">
 			<label fallback="1036">$INFO[Skin.String(FavoritesHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Favorites.png">$INFO[Skin.String(FavoritesHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(FavoritesHomeItem.MultiFanart)]</thumb>
@@ -297,6 +308,7 @@
 	<include name="WeatherMainMenu">
 		<item id="7">
 			<label fallback="31950">$INFO[Skin.String(WeatherHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultAddonWeather.png">$INFO[Skin.String(WeatherHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</thumb>
@@ -314,10 +326,11 @@
 	<include name="MusicVideosMainMenu">
 		<item id="13">
 			<label fallback="31960">$INFO[Skin.String(MusicVideoHomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="views/list/DefaultMusicVideos.png">$INFO[Skin.String(MusicVideoHomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(MusicVideoHomeItem.MultiFanart)]</thumb>
-			<property name="Path" fallback="ActivateWindow(Videos,videodb://musicvideos/titles/,return)">$INFO[Skin.String(MusicVideoHomeItem.Path)]</property>
+			<property name="Path" fallback="ActivateWindow(Videos,MusicVideoTitles,return)">$INFO[Skin.String(MusicVideoHomeItem.Path)]</property>
 			<property name="Item">MusicVideo</property>
 			<property name="BGType">$INFO[Skin.String(MusicVideoHomeItem.BGType)]</property>
 			<property name="Widget">$INFO[Skin.String(MusicVideoHomeItem.Widget)]</property>
@@ -331,6 +344,7 @@
 	<include name="CustomMainMenuItem1">
 		<item id="101">
 			<label fallback="CUSTOM1">$INFO[Skin.String(Custom1HomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Customize.png">$INFO[Skin.String(Custom1HomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(Custom1HomeItem.MultiFanart)]</thumb>
@@ -348,6 +362,7 @@
 	<include name="CustomMainMenuItem2">
 		<item id="202">
 			<label fallback="CUSTOM2">$INFO[Skin.String(Custom2HomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Customize.png">$INFO[Skin.String(Custom2HomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(Custom2HomeItem.MultiFanart)]</thumb>
@@ -365,6 +380,7 @@
 	<include name="CustomMainMenuItem3">
 		<item id="303">
 			<label fallback="CUSTOM3">$INFO[Skin.String(Custom3HomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Customize.png">$INFO[Skin.String(Custom3HomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(Custom3HomeItem.MultiFanart)]</thumb>
@@ -382,6 +398,7 @@
 	<include name="CustomMainMenuItem4">
 		<item id="404">
 			<label fallback="CUSTOM4">$INFO[Skin.String(Custom4HomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Customize.png">$INFO[Skin.String(Custom4HomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(Custom4HomeItem.MultiFanart)]</thumb>
@@ -399,6 +416,7 @@
 	<include name="CustomMainMenuItem5">
 		<item id="505">
 			<label fallback="CUSTOM5">$INFO[Skin.String(Custom5HomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Customize.png">$INFO[Skin.String(Custom5HomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(Custom5HomeItem.MultiFanart)]</thumb>
@@ -416,6 +434,7 @@
 	<include name="CustomMainMenuItem6">
 		<item id="606">
 			<label fallback="CUSTOM6">$INFO[Skin.String(Custom6HomeItem.Label)]</label>
+			<label2>31605</label2>
 			<onclick>$INFO[Container(9000).ListItem.Property(Path)]</onclick>
 			<icon fallback="special://skin/extras/icons/Customize.png">$INFO[Skin.String(Custom6HomeItem.Icon)]</icon>
 			<thumb>$INFO[Skin.String(Custom6HomeItem.MultiFanart)]</thumb>
@@ -432,24 +451,24 @@
 	</include>
 	<include name="FallbackMenu">
 		<content>
-			<include condition="String.IsEmpty(Skin.String(PicturesHomeItem.Disable))">PicturesMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(MusicHomeItem.Disable))">MusicMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(MovieHomeItem.Disable))">MoviesMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(TVShowHomeItem.Disable))">TVShowsMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(LiveTVHomeItem.Disable))">TVMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(Custom1HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom1HomeItem.Path))">CustomMainMenuItem1</include>
-			<include condition="String.IsEmpty(Skin.String(Custom2HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom2HomeItem.Path))">CustomMainMenuItem2</include>
-			<include condition="String.IsEmpty(Skin.String(Custom3HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom3HomeItem.Path))">CustomMainMenuItem3</include>
-			<include condition="String.IsEmpty(Skin.String(Custom4HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom4HomeItem.Path))">CustomMainMenuItem4</include>
-			<include condition="String.IsEmpty(Skin.String(Custom5HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom5HomeItem.Path))">CustomMainMenuItem5</include>
-			<include condition="String.IsEmpty(Skin.String(Custom6HomeItem.Disable)) + !String.IsEmpty(Skin.String(Custom6HomeItem.Path))">CustomMainMenuItem6</include>
-			<include condition="String.IsEmpty(Skin.String(VideosHomeItem.Disable))">VideosMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(ProgramsHomeItem.Disable))">ProgramsMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(SettingsHomeItem.Disable))">SettingsMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(ShutdownHomeItem.Disable))">ShutdownMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(FavoritesHomeItem.Disable))">FavoritesMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(WeatherHomeItem.Disable))">WeatherMainMenu</include>
-			<include condition="String.IsEmpty(Skin.String(MusicVideoHomeItem.Disable))">MusicVideosMainMenu</include>
+			<include condition="IsEmpty(Skin.String(PicturesHomeItem.Disable))">PicturesMainMenu</include>
+			<include condition="IsEmpty(Skin.String(MusicHomeItem.Disable))">MusicMainMenu</include>
+			<include condition="IsEmpty(Skin.String(MovieHomeItem.Disable))">MoviesMainMenu</include>
+			<include condition="IsEmpty(Skin.String(TVShowHomeItem.Disable))">TVShowsMainMenu</include>
+			<include condition="IsEmpty(Skin.String(LiveTVHomeItem.Disable))">TVMainMenu</include>
+			<include condition="IsEmpty(Skin.String(Custom1HomeItem.Disable)) + !IsEmpty(Skin.String(Custom1HomeItem.Path))">CustomMainMenuItem1</include>
+			<include condition="IsEmpty(Skin.String(Custom2HomeItem.Disable)) + !IsEmpty(Skin.String(Custom2HomeItem.Path))">CustomMainMenuItem2</include>
+			<include condition="IsEmpty(Skin.String(Custom3HomeItem.Disable)) + !IsEmpty(Skin.String(Custom3HomeItem.Path))">CustomMainMenuItem3</include>
+			<include condition="IsEmpty(Skin.String(Custom4HomeItem.Disable)) + !IsEmpty(Skin.String(Custom4HomeItem.Path))">CustomMainMenuItem4</include>
+			<include condition="IsEmpty(Skin.String(Custom5HomeItem.Disable)) + !IsEmpty(Skin.String(Custom5HomeItem.Path))">CustomMainMenuItem5</include>
+			<include condition="IsEmpty(Skin.String(Custom6HomeItem.Disable)) + !IsEmpty(Skin.String(Custom6HomeItem.Path))">CustomMainMenuItem6</include>
+			<include condition="IsEmpty(Skin.String(VideosHomeItem.Disable))">VideosMainMenu</include>
+			<include condition="IsEmpty(Skin.String(ProgramsHomeItem.Disable))">ProgramsMainMenu</include>
+			<include condition="IsEmpty(Skin.String(SettingsHomeItem.Disable))">SettingsMainMenu</include>
+			<include condition="IsEmpty(Skin.String(ShutdownHomeItem.Disable))">ShutdownMainMenu</include>
+			<include condition="IsEmpty(Skin.String(FavoritesHomeItem.Disable))">FavoritesMainMenu</include>
+			<include condition="IsEmpty(Skin.String(WeatherHomeItem.Disable))">WeatherMainMenu</include>
+			<include condition="IsEmpty(Skin.String(MusicVideoHomeItem.Disable))">MusicVideosMainMenu</include>
 		</content>
 	</include>
 	<!-- SubMenu -->
@@ -457,272 +476,273 @@
 		<item>
 			<label>342</label>
 			<onclick>ActivateWindow(Videos,Movies,root)</onclick>
-			<icon />
-			<thumb />
-			<visible>Library.HasContent(Movies) + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>Library.HasContent(Movies) + StringCompare(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
 		</item>
 		<item>
 			<label>20343</label>
 			<onclick>ActivateWindow(Videos,TvShows,root)</onclick>
-			<icon />
-			<thumb />
-			<visible>Library.HasContent(TVShows) + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>Library.HasContent(TVShows) + StringCompare(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
 		</item>
 		<item>
 			<label>24001</label>
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
 		</item>
 		<item>
 			<label>744</label>
 			<onclick>ActivateWindow(Videos,Files,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
 		</item>
 		<item>
 			<label>136</label>
 			<onclick>ActivateWindow(Videos,Playlists,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
 		</item>
 		<item>
 			<label>14022</label>
 			<onclick>ActivateWindow(Videos,Root)</onclick>
-			<icon />
-			<thumb />
-			<visible>Library.HasContent(Video) + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>Library.HasContent(Video) + StringCompare(Container(9000).ListItem.Property(submenuVisibility),x2)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuMovies">
 		<item>
 			<label>16101</label>
 			<onclick>ActivateWindow(Videos,special://skin/extras/Unwatched.xsp,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>575</label>
 			<onclick>ActivateWindow(Videos,special://skin/extras/InProgress.xsp,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>31328</label>
 			<onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>20434</label>
 			<onclick>ActivateWindow(Videos,MovieSets,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>Library.HasContent(MovieSets) + String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>Library.HasContent(MovieSets) + StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>135</label>
 			<onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>652</label>
 			<onclick>ActivateWindow(Videos,MovieYears,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>344</label>
 			<onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 		<item>
 			<label>20459</label>
 			<onclick>ActivateWindow(Videos,MovieTags,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x10)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuTVShows">
 		<item>
 			<label>369</label>
 			<onclick>ActivateWindow(Videos,TVShowTitles,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11) +!System.HasAddon(script.tv.show.next.aired)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11) +!System.HasAddon(script.tv.show.next.aired)</visible>
 		</item>
 		<item>
 			<label>$ADDON[script.tv.show.next.aired 32019]</label>
 			<onclick>RunAddon(script.tv.show.next.aired,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11) + System.HasAddon(script.tv.show.next.aired)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11) + System.HasAddon(script.tv.show.next.aired)</visible>
 		</item>
 		<item>
 			<label>575</label>
 			<onclick>ActivateWindow(Videos,library://video/inprogressshows.xml,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
 		</item>
 		<item>
 			<label>31328</label>
 			<onclick>ActivateWindow(Videos,RecentlyAddedEpisodes,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
 		</item>
 		<item>
 			<label>135</label>
 			<onclick>ActivateWindow(Videos,TVShowGenres,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
 		</item>
 		<item>
 			<label>652</label>
 			<onclick>ActivateWindow(Videos,TvShowYears,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
 		</item>
 		<item>
 			<label>344</label>
 			<onclick>ActivateWindow(Videos,TvShowActors,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x11)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuMusic">
 		<item>
 			<label>133</label>
-			<onclick>ActivateWindow(Music,Artists,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
 		</item>
 		<item>
 			<label>132</label>
 			<onclick>ActivateWindow(Music,Albums,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
 		</item>
 		<item>
 			<label>134</label>
 			<onclick>ActivateWindow(Music,Songs,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
 		</item>
 		<item>
 			<label>744</label>
 			<onclick>ActivateWindow(Music,Files,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
 		</item>
 		<item>
 			<label>14022</label>
-			<onclick>ActivateWindow(Music,root)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<onclick>ActivateWindow(Music,Root)</onclick>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
 		</item>
 		<item>
 			<label>24001</label>
 			<onclick>ActivateWindow(Music,Addons,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x3)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuPrograms">
 		<item>
 			<label>20244</label>
 			<onclick>ActivateWindow(Programs)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x1) + System.Platform(Android)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x1) + System.Platform(Android)</visible>
 		</item>
 		<item>
 			<label>15016</label>
 			<onclick>SetProperty(Progams.Games,True,home)</onclick>
 			<onclick>RunAddon(plugin.program.advanced.launcher)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x1) + System.HasAddon(plugin.program.advanced.launcher)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x1) + System.HasAddon(plugin.program.advanced.launcher)</visible>
 		</item>
 		<item>
 			<label>1037</label>
 			<onclick>ActivateWindow(Videos,Addons,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x1)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x1)</visible>
 		</item>
 		<item>
 			<label>1038</label>
-			<onclick>ActivateWindow(Music,Addons,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x1)</visible>
+			<onclick condition="Library.HasContent(music)">ActivateWindow(Music,Addons,return)</onclick>
+			<onclick condition="!Library.HasContent(music)">ActivateWindow(Musicfiles,Addons,return)</onclick>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x1)</visible>
 		</item>
 		<item>
 			<label>1039</label>
 			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x1)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x1)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuSettings">
 		<item>
 			<label>24001</label>
 			<onclick>ActivateWindow(AddonBrowser)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
 		</item>
 		<item>
 			<label>20077</label>
 			<onclick>ActivateWindow(SkinSettings)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
 		</item>
 		<item>
 			<label>7</label>
 			<onclick>ActivateWindow(FileManager)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
 		</item>
 		<item>
 			<label>13200</label>
 			<onclick>ActivateWindow(Profiles)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
 		</item>
 		<item>
 			<label>130</label>
 			<onclick>ActivateWindow(SystemInfo)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x5)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuShutdown">
@@ -731,126 +751,126 @@
 			<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>
 			<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>
 			<visible>!System.HasAlarm(shutdowntimer)</visible>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>$LOCALIZE[222]</label>
 			<onclick>CancelAlarm(shutdowntimer)</onclick>
 			<visible>System.HasAlarm(shutdowntimer)</visible>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>$LOCALIZE[13016]</label>
 			<onclick>Powerdown()</onclick>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>13013</label>
 			<onclick>Reset()</onclick>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>13011</label>
 			<onclick>Suspend()</onclick>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>13010</label>
 			<onclick>Hibernate()</onclick>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>20126</label>
 			<onclick>System.LogOff</onclick>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 		<item>
 			<label>13009</label>
 			<onclick>Quit</onclick>
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x6)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuPictures">
 		<item>
 			<label>24001</label>
 			<onclick>ActivateWindow(Pictures,Addons,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x4)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x4)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuLiveTV">
 		<item>
 			<label>19023</label>
 			<onclick>ActivateWindow(TVChannels)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19024</label>
 			<onclick>ActivateWindow(RadioChannels)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19069</label>
 			<onclick>ActivateWindow(TVGuide)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19163</label>
 			<onclick>ActivateWindow(TVRecordings)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 		<item>
 			<label>19040</label>
 			<onclick>ActivateWindow(TVTimers)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x12)</visible>
 		</item>
 	</include>
 	<include name="HomeSubMenuMusicVideos">
 		<item>
 			<label>133</label>
 			<onclick>ActivateWindow(Videos,MusicVideoArtists,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
 		</item>
 		<item>
 			<label>135</label>
 			<onclick>ActivateWindow(Videos,MusicVideoGenres,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
 		</item>
 		<item>
 			<label>31328</label>
 			<onclick>ActivateWindow(Videos,RecentlyAddedMusicVideos,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
 		</item>
 		<item>
 			<label>652</label>
 			<onclick>ActivateWindow(Videos,MusicVideoYears,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
 		</item>
 		<item>
 			<label>20459</label>
 			<onclick>ActivateWindow(Videos,MusicVideoTags,return)</onclick>
-			<icon />
-			<thumb />
-			<visible>String.IsEqual(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
+			<icon>-</icon>
+			<thumb>-</thumb>
+			<visible>StringCompare(Container(9000).ListItem.Property(submenuVisibility),x13)</visible>
 		</item>
 	</include>
 	<include name="FallbackSubMenu">

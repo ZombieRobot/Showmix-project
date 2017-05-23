@@ -7,7 +7,7 @@
 		<control type="group">
 			<left>0</left>
 			<top>128</top>
-			<include>WindowOpenCloseAnimation</include>
+			<include>Window_OpenClose_Animation</include>
 			<include>SystemLeftPanel</include>
 			<control type="grouplist" id="9000">
 				<left>82</left>
@@ -156,7 +156,7 @@
 				</control>
 				<control type="label">
 					<description>CPU Text</description>
-					<left>630</left>
+					<left>870</left>
 					<top>20</top>
 					<width>240</width>
 					<height>24</height>
@@ -177,7 +177,7 @@
 				</control>
 				<control type="label">
 					<description>Memory Text</description>
-					<left>510</left>
+					<left>870</left>
 					<top>70</top>
 					<width>360</width>
 					<height>24</height>
@@ -210,7 +210,7 @@
 					<description>Label 2</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -219,7 +219,7 @@
 					<description>Label 3</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -228,7 +228,7 @@
 					<description>Label 4</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -237,7 +237,7 @@
 					<description>Label 5</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -246,7 +246,7 @@
 					<description>Label 6</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -255,7 +255,7 @@
 					<description>Label 7</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -264,7 +264,7 @@
 					<description>Label 8</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -273,7 +273,7 @@
 					<description>Label 9</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -282,7 +282,7 @@
 					<description>Label 10</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>
@@ -291,7 +291,7 @@
 					<description>Label 11</description>
 					<width>1316</width>
 					<height>90</height>
-					<label />
+					<label>-</label>
 					<font>font15</font>
 					<shadowcolor>shadow</shadowcolor>
 					<texturenofocus border="1">separator5.png</texturenofocus>

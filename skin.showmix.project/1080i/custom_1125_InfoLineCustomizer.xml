@@ -6,8 +6,8 @@
 		<left>457</left>
 		<top>240</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
-	<onunload condition="!String.IsEmpty(Skin.String(ItemToEdit.InfoLine))">Skin.SetString($INFO[Window(Home).Property(Nox.InfoLine)],$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
+	<include>dialogeffect</include>
+	<onunload condition="!IsEmpty(Skin.String(ItemToEdit.InfoLine))">Skin.SetString($INFO[Window(Home).Property(Nox.InfoLine)],$INFO[Skin.String(ItemToEdit.InfoLine)])</onunload>
 	<onunload>ClearProperty(Nox.InfoLine,Home)</onunload>
 	<controls>
 		<control type="image">
@@ -33,11 +33,12 @@
 			<label>$LOCALIZE[31049]</label>
 			<align>center</align>
 			<textcolor>dialogheader</textcolor>
+			<font>font15_title</font>
 		</control>
 		<control type="list" id="90100">
 			<left>189</left>
 			<top>88</top>
-			<width>628</width>
+			<width>630</width>
 			<height>480</height>
 			<onup>90100</onup>
 			<ondown>90100</ondown>
@@ -45,14 +46,14 @@
 			<onright>60</onright>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime tween="quadratic" easing="out">200</scrolltime>
-			<itemlayout height="60" width="628">
+			<itemlayout height="60" width="630">
 				<control type="image">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="label">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font14</font>
@@ -63,22 +64,22 @@
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
-			<focusedlayout height="60" width="628">
+			<focusedlayout height="60" width="630">
 				<control type="image">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
-					<include>VisibleFadeAnimation</include>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="image">
 					<width>629</width>
 					<height>60</height>
 					<texture border="5">listselect_fo.png</texture>
 					<visible>Control.HasFocus(90100)</visible>
-					<include>VisibleFadeAnimation</include>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="label">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font14</font>
@@ -138,34 +139,19 @@
 					<onclick>Skin.SetString(ItemToEdit.InfoLine,8)</onclick>
 					<onclick>Dialog.Close(1125)</onclick>
 				</item>
-				<item>
-					<label>$LOCALIZE[31097]</label>
-					<onclick>Skin.SetString(ItemToEdit.InfoLine,9)</onclick>
-					<onclick>Dialog.Close(1125)</onclick>
-				</item>
-				<item>
-					<label>$LOCALIZE[31098]</label>
-					<onclick>Skin.SetString(ItemToEdit.InfoLine,10)</onclick>
-					<onclick>Dialog.Close(1125)</onclick>
-				</item>
-				<item>
-					<label>$LOCALIZE[31099]</label>
-					<onclick>Skin.SetString(ItemToEdit.InfoLine,11)</onclick>
-					<onclick>Dialog.Close(1125)</onclick>
-				</item>
 			</content>
 		</control>
 		<control type="scrollbar" id="60">
-			<left>819</left>
+			<left>821</left>
 			<top>88</top>
 			<height>480</height>
-			<width>14</width>
+			<width>8</width>
 			<onleft>90100</onleft>
 			<onright>90100</onright>
 			<ondown>60</ondown>
 			<onup>60</onup>
 			<showonepage>false</showonepage>
-			<texturesliderbackground />
+			<texturesliderbackground>-</texturesliderbackground>
 			<texturesliderbar colordiffuse="55ffffff" border="4">scrollbar/texturesliderbar3.png</texturesliderbar>
 			<texturesliderbarfocus border="4">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
 		</control>

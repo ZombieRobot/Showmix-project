@@ -6,7 +6,7 @@
 		<left>457</left>
 		<top>240</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
+	<include>dialogeffect</include>
 	<onunload>ClearProperty(Nox.Label,Home)</onunload>
 	<onunload>ClearProperty(Nox.Path,Home)</onunload>
 	<onunload>ClearProperty(Nox.MultiFanart,Home)</onunload>
@@ -41,6 +41,7 @@
 			<label>$LOCALIZE[31074]</label>
 			<align>center</align>
 			<textcolor>dialogheader</textcolor>
+			<font>font15_title</font>
 		</control>
 		<control type="list" id="9000">
 			<left>-100</left>
@@ -51,7 +52,7 @@
 			<focusedlayout height="100" width="100" />
 			<content>
 				<item>
-					<label />
+					<label>-</label>
 					<onclick>noop</onclick>
 					<property name="Path">SetFocus(90101)</property>
 				</item>
@@ -98,7 +99,7 @@
 		<control type="list" id="90100">
 			<left>189</left>
 			<top>88</top>
-			<width>628</width>
+			<width>630</width>
 			<height>480</height>
 			<onup>90100</onup>
 			<ondown>90100</ondown>
@@ -106,14 +107,14 @@
 			<onright>60</onright>
 			<pagecontrol>60</pagecontrol>
 			<scrolltime tween="quadratic" easing="out">200</scrolltime>
-			<itemlayout height="60" width="628">
+			<itemlayout height="60" width="630">
 				<control type="image">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
 				</control>
 				<control type="label">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font14_title</font>
@@ -124,22 +125,22 @@
 					<label>$INFO[ListItem.Label]</label>
 				</control>
 			</itemlayout>
-			<focusedlayout height="60" width="628">
+			<focusedlayout height="60" width="630">
 				<control type="image">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<texture border="1">separator2.png</texture>
-					<include>VisibleFadeAnimation</include>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="image">
 					<width>629</width>
 					<height>60</height>
 					<texture border="5">listselect_fo.png</texture>
 					<visible>Control.HasFocus(90101) | Control.HasFocus(90100)</visible>
-					<include>VisibleFadeAnimation</include>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="label">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<textoffsetx>15</textoffsetx>
 					<font>font14_title</font>
@@ -152,7 +153,7 @@
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="![Control.HasFocus(90101) | Control.HasFocus(90100)]">Conditional</animation>
 				</control>
 				<control type="button">
-					<width>628</width>
+					<width>630</width>
 					<height>60</height>
 					<include>HiddenObject</include>
 					<onclick>SendCLick(90101)</onclick>
@@ -180,16 +181,16 @@
 			</content>
 		</control>
 		<control type="scrollbar" id="60">
-			<left>819</left>
+			<left>821</left>
 			<top>88</top>
 			<height>480</height>
-			<width>14</width>
+			<width>8</width>
 			<onleft>90100</onleft>
 			<onright>90100</onright>
 			<ondown>60</ondown>
 			<onup>60</onup>
 			<showonepage>false</showonepage>
-			<texturesliderbackground />
+			<texturesliderbackground>-</texturesliderbackground>
 			<texturesliderbar colordiffuse="55ffffff" border="4">scrollbar/texturesliderbar3.png</texturesliderbar>
 			<texturesliderbarfocus border="4">scrollbar/texturesliderbar3.png</texturesliderbarfocus>
 		</control>

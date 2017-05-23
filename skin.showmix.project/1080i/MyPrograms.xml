@@ -7,11 +7,10 @@
 	<onunload>ClearProperty(Window.HasSettings,Home)</onunload>
 	<onunload>ClearProperty(Progams.Games,Home)</onunload>
 	<views>50,51,55,500</views>
-	<menucontrol>9051</menucontrol>
 	<controls>
 		<include>CommonBackground</include>
 		<control type="group">
-			<include>WindowOpenCloseAnimation</include>
+			<include>Animation_CommonFade</include>
 			<include condition="!Skin.HasSetting(Enable.SlimList)">AddonList</include>
 			<include condition="Skin.HasSetting(Enable.SlimList)">SlimList</include>
 			<!-- view id = 50 -->
@@ -35,16 +34,21 @@
 					<left>410</left>
 					<top>1010</top>
 					<control type="label">
+						<left>0</left>
+						<top>0</top>
 						<width>1100</width>
-						<height>48</height>
+						<height>42</height>
+						<aligny>top</aligny>
 						<align>center</align>
-						<font>font16_title_bold</font>
+						<font>font16_title</font>
 						<textcolor>white</textcolor>
 						<scroll>true</scroll>
-						<label>$INFO[ListItem.Label]</label>
+						<label>[B]$INFO[ListItem.Label][/B]</label>
+						<textoffsety>-2</textoffsety>
 						<textoffsetx>30</textoffsetx>
 					</control>
 					<control type="label">
+						<left>0</left>
 						<top>45</top>
 						<width>1100</width>
 						<height>30</height>
@@ -58,7 +62,8 @@
 				<control type="group">
 					<left>0</left>
 					<top>1010</top>
-					<width>100%</width>
+					<width>1920</width>
+					<align>center</align>
 					<visible>[Container.Content(albums) | Container.Content(songs)]</visible>
 					<control type="group">
 						<left>120</left>
@@ -67,8 +72,8 @@
 							<width>155</width>
 							<height>90</height>
 							<align>center</align>
-							<label>$INFO[ListItem.Year]</label>
-							<font>font35_title_bold</font>
+							<label>[B]$INFO[ListItem.Year][/B]</label>
+							<font>font35_title</font>
 							<textcolor>white</textcolor>
 							<wrapmultiline>true</wrapmultiline>
 						</control>
@@ -95,23 +100,28 @@
 						<left>90</left>
 						<top>1010</top>
 						<control type="label">
+							<left>0</left>
+							<top>0</top>
 							<width>1150</width>
-							<height>48</height>
+							<height>42</height>
+							<aligny>top</aligny>
 							<align>left</align>
-							<font>font16_title_bold</font>
+							<font>font16_title</font>
 							<textcolor>white</textcolor>
 							<scroll>true</scroll>
-							<label>$INFO[ListItem.Label]</label>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textoffsety>-2</textoffsety>
 							<textoffsetx>30</textoffsetx>
 						</control>
 						<control type="label">
+							<left>0</left>
 							<top>45</top>
 							<width>1500</width>
 							<height>30</height>
 							<align>left</align>
 							<font>font13_title</font>
 							<textcolor>white</textcolor>
-							<label>$INFO[ListItem.AddonSummary]</label>
+							<label>$INFO[ListItem.Property(Addon.Summary)]</label>
 							<textoffsetx>30</textoffsetx>
 						</control>
 					</control>
@@ -121,8 +131,8 @@
 						<width>198</width>
 						<height>90</height>
 						<align>right</align>
-						<label>$INFO[ListItem.AddonVersion]</label>
-						<font>font35_title_bold</font>
+						<label>$INFO[ListItem.Property(Addon.Version),[B],[/B]]</label>
+						<font>font35_title</font>
 						<textcolor>white</textcolor>
 						<wrapmultiline>true</wrapmultiline>
 					</control>
@@ -131,7 +141,7 @@
 			<control type="image">
 				<left>0</left>
 				<top>970</top>
-				<width>100%</width>
+				<width>1920</width>
 				<height>140</height>
 				<texture border="1">gradient_floor.png</texture>
 			</control>
@@ -158,28 +168,21 @@
 					<onclick>right</onclick>
 					<onclick>Filter</onclick>
 				</control>
-				<control type="button" id="203">
-					<description>View options</description>
+				<control type="button" id="201">
+					<description>Misc options</description>
 					<textwidth>352</textwidth>
 					<font>font13_title</font>
 					<include>ButtonCommonValues</include>
-					<label>31039</label>
+					<label>31026</label>
 					<enable>no</enable>
 					<disabledcolor>themecolor</disabledcolor>
 				</control>
-				<control type="button" id="613">
-					<description>Get more</description>
+				<control type="radiobutton" id="6055">
+					<description>List Toggle topbar</description>
+					<textwidth>255</textwidth>
 					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[21452]</label>
-					<onclick>ActivateWindow(addonbrowser,addons://more/executable/,return)</onclick>
-					<visible>Container.Content(addons)</visible>
-				</control>
-				<control type="button" id="614">
-					<description>Add-on settings</description>
-					<include>ButtonCommonValues</include>
-					<label>$LOCALIZE[10140]</label>
-					<onclick>Addon.OpenSettings($INFO[Container.PluginName])</onclick>
-					<visible>!String.IsEmpty(Container.PluginName)</visible>
+					<label>$LOCALIZE[32000]</label>
+					<onclick>Skin.ToggleSetting(topbar)</onclick>
 				</control>
 			</control>
 		</control>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <window>
-	<defaultcontrol always="true">50</defaultcontrol>
+	<defaultcontrol allways="true">50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<onload>SetProperty(Window.HasSettings,True,home)</onload>
 	<onload>ClearProperty(MediaMenu,Home)</onload>
@@ -48,7 +48,7 @@
 				<top>182</top>
 				<width>8</width>
 				<height>720</height>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>50</onleft>
@@ -111,7 +111,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(50)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -180,7 +180,7 @@
 				<top>182</top>
 				<width>8</width>
 				<height>720</height>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>100</onleft>
@@ -243,7 +243,7 @@
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(100)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="label">
 						<width>821</width>
@@ -273,7 +273,7 @@
 		<control type="image">
 			<left>0</left>
 			<top>970</top>
-			<width>100%</width>
+			<width>1920</width>
 			<height>140</height>
 			<texture border="1">gradient_floor.png</texture>
 		</control>

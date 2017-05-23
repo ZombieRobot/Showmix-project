@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--========================================================================-->
+<!--   ###    ########  #######  ##    ##    ##    ##  #######  ##     ##	-->
+<!--  ## ##   ##       ##     ## ###   ##    ###   ## ##     ##  ##   ##	-->
+<!--##    ##  ##       ##     ## ####  ##    ####  ## ##     ##   ## ##		-->
+<!--##     ## ######   ##     ## ## ## ##    ## ## ## ##     ##    ###		-->
+<!--######### ##       ##     ## ##  ####    ##  #### ##     ##   ## ##		-->
+<!--##     ## ##       ##     ## ##   ###    ##   ### ##     ##  ##   ##	-->
+<!--##     ## ########  #######  ##    ##    ##    ##  #######  ##     ##	-->
+<!--========================================================================-->
 <includes>
 	<!-- ######## -->
 	<!-- Defaults -->
@@ -6,7 +15,7 @@
 	<include name="FullscreenDimensions">
 		<left>0</left>
 		<top>0</top>
-		<width>100%</width>
+		<width>1920</width>
 		<height>1080</height>
 	</include>
 	<include name="HiddenObject">
@@ -14,10 +23,10 @@
 		<top>-300</top>
 		<width>1</width>
 		<height>1</height>
-		<texturefocus />
-		<texturenofocus />
-		<label />
-		<font />
+		<texturefocus>-</texturefocus>
+		<texturenofocus>-</texturenofocus>
+		<label>-</label>
+		<font>-</font>
 	</include>
 	<include name="HiddenList">
 		<left>-100</left>
@@ -37,15 +46,15 @@
 		<font>IconSmall</font>
 		<textcolor>grey</textcolor>
 		<focusedcolor>white</focusedcolor>
-		<texturenofocus />
+		<texturenofocus>-</texturenofocus>
 		<shadowcolor>ff000000</shadowcolor>
-		<alttexturenofocus />
+		<alttexturenofocus>-</alttexturenofocus>
 	</include>
 	<include name="ButtonCommonValues">
 		<width>400</width>
 		<height>60</height>
 		<textoffsetx>15</textoffsetx>
-		<textcolor>grey2</textcolor>
+		<textcolor>grey</textcolor>
 		<focusedcolor>showmixfocus</focusedcolor>
 		<textwidth>300</textwidth>
 		<aligny>center</aligny>
@@ -60,7 +69,7 @@
 		<aligny>center</aligny>
 		<font>font15</font>
 		<textcolor>grey</textcolor>
-		<focusedcolor>white</focusedcolor>
+		<focusedcolor>showmixfocus</focusedcolor>
 	</include>
 	<!-- KeyBoard -->
 	<include name="Objects_KeyOffVars">
@@ -211,7 +220,7 @@
 				<height>840</height>
 				<texture border="4">listselect_fo.png</texture>
 				<visible>ControlGroup(9001).HasFocus()</visible>
-				<include>VisibleFadeAnimation</include>
+				<include>VisibleFadeEffect</include>
 			</control>
 			<control type="image">
 				<left>15</left>

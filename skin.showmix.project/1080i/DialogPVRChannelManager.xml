@@ -7,7 +7,7 @@
 		<left>159</left>
 		<top>100</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
+	<include>dialogeffect</include>
 	<controls>
 		<control type="image">
 			<description>background image</description>
@@ -27,7 +27,7 @@
 			<label>$LOCALIZE[19199] - $LOCALIZE[19023]</label>
 			<align>center</align>
 			<textcolor>dialogheader</textcolor>
-			<visible>String.IsEmpty(Window.Property(IsRadio))</visible>
+			<visible>IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="label">
 			<description>header label</description>
@@ -39,7 +39,7 @@
 			<label>$LOCALIZE[19199] - $LOCALIZE[19024]</label>
 			<align>center</align>
 			<textcolor>dialogheader</textcolor>
-			<visible>!String.IsEmpty(Window.Property(IsRadio))</visible>
+			<visible>!IsEmpty(Window.Property(IsRadio))</visible>
 		</control>
 		<control type="group" id="9000">
 			<left>30</left>
@@ -130,7 +130,7 @@
 						<height>100</height>
 						<texture border="5">listselect_fo.png</texture>
 						<visible>Control.HasFocus(20)</visible>
-						<include>VisibleFadeAnimation</include>
+						<include>VisibleFadeEffect</include>
 					</control>
 					<control type="image">
 						<left>8</left>
@@ -229,7 +229,7 @@
 				<width>570</width>
 				<height>720</height>
 				<itemgap>0</itemgap>
-				<pagecontrol />
+				<pagecontrol>-</pagecontrol>
 				<onup>9002</onup>
 				<ondown>9002</ondown>
 				<onleft>9000</onleft>
@@ -283,9 +283,19 @@
 					<width>570</width>
 					<label>19024</label>
 					<altlabel>19023</altlabel>
-					<usealttexture>!String.IsEmpty(Window.Property(IsRadio))</usealttexture>
+					<usealttexture>!IsEmpty(Window.Property(IsRadio))</usealttexture>
 				</control>
 				<control type="button" id="31">
+					<description>Edit channel Button</description>
+					<width>570</width>
+					<label>19203</label>
+				</control>
+				<control type="button" id="32">
+					<description>Delete channel Button</description>
+					<width>570</width>
+					<label>19211</label>
+				</control>
+				<control type="button" id="33">
 					<description>New channel Button</description>
 					<width>570</width>
 					<label>19204</label>

@@ -2,23 +2,14 @@
 <window type="dialog">
 	<defaultcontrol always="true">300</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
+	<zorder>1</zorder>
 	<coordinates>
 		<system>1</system>
 		<left>161</left>
 		<top>210</top>
 	</coordinates>
-	<include>DialogOpenCloseAnimation</include>
+	<include>dialogeffect</include>
 	<controls>
-
-		<control type="button" id="500">
-			<description>Needed Button</description>
-			<visible>false</visible>
-		</control>
-		<control type="button" id="401">
-			<description>Needed Button</description>
-			<visible>false</visible>
-		</control>
-
 		<control type="group" id="200">
 			<control type="image">
 				<description>background image</description>
@@ -81,6 +72,8 @@
 						<textoffsetx>15</textoffsetx>
 					</control>
 					<control type="label">
+						<left>600</left>
+						<top>0</top>
 						<width>600</width>
 						<height>60</height>
 						<label>$INFO[ListItem.Label2]</label>
@@ -94,6 +87,8 @@
 				</itemlayout>
 				<focusedlayout width="600" height="60">
 					<control type="image">
+						<left>0</left>
+						<top>0</top>
 						<width>598</width>
 						<height>60</height>
 						<texture border="5">listselect_fo.png</texture>
@@ -110,6 +105,8 @@
 						<textoffsetx>15</textoffsetx>
 					</control>
 					<control type="label">
+						<left>600</left>
+						<top>0</top>
 						<width>600</width>
 						<height>60</height>
 						<label>$INFO[ListItem.Label2]</label>
@@ -127,7 +124,7 @@
 				<left>628</left>
 				<width>14</width>
 				<height>542</height>
-				<texturesliderbackground />
+				<texturesliderbackground>-</texturesliderbackground>
 				<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 				<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 				<onleft>211</onleft>
@@ -178,7 +175,7 @@
 				<description>Set thumbnail Button</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="button" id="307">
 				<description>Set action Button</description>
@@ -194,25 +191,25 @@
 				<description>Change widget</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="button" id="310">
 				<description>Change background</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="label" id="311">
 				<description>Selected widget name</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 			<control type="label" id="312">
 				<description>Selected background name</description>
 				<width>310</width>
 				<align>center</align>
-				<visible>String.IsEqual(Window.Property(groupname),mainmenu)</visible>
+				<visible>StringCompare(Window.Property(groupname),mainmenu)</visible>
 			</control>
 		</control>
 		<control type="group" id="100">
@@ -225,6 +222,7 @@
 				<texture border="5">dialogs/default/inner.png</texture>
 			</control>-->
 			<control type="label" id="101">
+				<left>602</left>
 				<width>602</width>
 				<height>40</height>
 				<textcolor>grey3</textcolor>
@@ -252,6 +250,8 @@
 			<preloaditems>2</preloaditems>
 			<itemlayout width="600" height="60">
 				<control type="label">
+					<left>0</left>
+					<top>0</top>
 					<width>600</width>
 					<height>60</height>
 					<label>$INFO[ListItem.Label]</label>
@@ -262,7 +262,9 @@
 					<aligny>center</aligny>
 				</control>
 				<control type="label">
-					<width>600</width>
+					<left>600</left>
+					<top>0</top>
+					<width>500</width>
 					<height>60</height>
 					<label>$INFO[ListItem.Label2]</label>
 					<font>font14</font>
@@ -275,13 +277,17 @@
 			</itemlayout>
 			<focusedlayout width="600" height="60">
 				<control type="image">
+					<left>0</left>
+					<top>0</top>
 					<width>599</width>
 					<height>60</height>
 					<texture border="5">listselect_fo.png</texture>
 					<visible>Control.HasFocus(111)</visible>
-					<include>VisibleFadeAnimation</include>
+					<include>VisibleFadeEffect</include>
 				</control>
 				<control type="label">
+					<left>0</left>
+					<top>0</top>
 					<width>600</width>
 					<height>60</height>
 					<label>$INFO[ListItem.Label]</label>
@@ -293,6 +299,8 @@
 					<animation effect="fade" start="100" end="70" time="300" tween="sine" easing="inout" condition="!Control.HasFocus(111)">Conditional</animation>
 				</control>
 				<control type="label">
+					<left>600</left>
+					<top>0</top>
 					<width>600</width>
 					<height>60</height>
 					<label>$INFO[ListItem.Label2]</label>
@@ -311,7 +319,7 @@
 			<left>1565</left>
 			<width>14</width>
 			<height>542</height>
-			<texturesliderbackground />
+			<texturesliderbackground>-</texturesliderbackground>
 			<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 			<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 			<onleft>111</onleft>

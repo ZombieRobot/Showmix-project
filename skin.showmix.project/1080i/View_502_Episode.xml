@@ -18,11 +18,11 @@
 				</control>
 				<control type="fixedlist" id="502">
 					<left>60</left>
-					<top>80</top>
+					<top>180</top>
 					<width>1820</width>
-					<height>980</height>
+					<height>780</height>
 					<orientation>vertical</orientation>
-					<movement>3</movement>
+					<movement>2</movement>
 					<focusposition>3</focusposition>
 					<onleft>SetProperty(MediaMenu,True,home)</onleft>
 					<onleft>SetFocus(9050)</onleft>
@@ -146,7 +146,7 @@
 					<onleft>502</onleft>
 					<onright>SetProperty(MediaMenu,True,home)</onright>
 					<onright>SetFocus(9050)</onright>
-					<texturesliderbackground />
+					<texturesliderbackground>-</texturesliderbackground>
 					<texturesliderbar colordiffuse="55ffffff" border="1">scrollbar/texturesliderbar2.png</texturesliderbar>
 					<texturesliderbarfocus border="1">scrollbar/texturesliderbar2.png</texturesliderbarfocus>
 					<showonepage>false</showonepage>
